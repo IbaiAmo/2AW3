@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(img/fondoverde.jpg);
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.titulo{
+    width: 90%;
+    background-image: url(img/fondomarino.jpg);
+    background-size: cover;
+    padding-block: 5px;
+    border: 5px solid #b99503;
+    text-align: center;
+
+    & h1{
+        color: #b99503;
+    }
+}
+
+.grid{
+    margin-top: 20px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px;
+    border: 5px solid #b99503;
+    gap: 10px;
+    grid-column: span 2;
+    background-color: #e9d891;
+
+    & img{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    & p{
+        color: #b99503;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+.card:nth-child(7){
+    grid-column: 2/4;
+}
+
+.card:nth-child(8){
+    grid-column: 4/6;
+}
