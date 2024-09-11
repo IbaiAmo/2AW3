@@ -12,17 +12,13 @@ function ejercicio1(){
     let ap1 = prompt("Introduce tu primer apellido");
     let ap2 = prompt("Introduce tu segundo apellido");
 
-
-    if (nombre == null && ap1 == null && ap2 == null){
-        panelEjercicio.innerHTML = "No sé quién eres porque no has escrito nada";
-    }else{
     $panelEjercicio.innerHTML = 
     `<h3>¿Quién eres tú?</h3>
     <p>Nombre: ${nombre}</p>
     <p>Primer apellido: ${ap1}</p>
     <p>Segundo apellido: ${ap2}</p>
     <strong>${nombre + " " + ap1 + " " + ap2}</strong>`;
-    }
+    
 }
 
 function ejercicio2(){
@@ -120,7 +116,6 @@ function ejercicio6(){
     $panelEjercicio.innerHTML = "";
     let numeros = "";
     let i = 2;
-    let confirmado = false;
     intervalNums();
 
     function intervalNums(){
@@ -137,7 +132,7 @@ function ejercicio6(){
                 const fondo = clone.querySelector("#fondo");
                 const btnNo = clone.getElementById("btnNo");
                 const btnSi = clone.getElementById("btnSi");
-    
+
                 $body.appendChild(fondo);
     
                 btnNo.onclick = () =>{
@@ -153,24 +148,45 @@ function ejercicio6(){
             `<h3>Numeros pares</h3>
             <p>${numeros}</p>
             `;
-        }, 200);    
+        }, 150);    
     }
 }
 
 function ejercicio7(){
     $panelEjercicio.innerHTML = "";
+
+    let numeros = "";
+
+    $panelEjercicio.innerHTML = 
+            `<h3>Sumatorios</h3>
+            <p>${numeros}</p>
+            `;
 }
 
 function ejercicio8(){
-    $panelEjercicio.innerHTML = "";
+
+    let numb = prompt("Introduce un número para calcular el factorial");
+    let multiplicado = numb, texto = numb, multiplicacion;
+
+    for (numb; numb > 1; numb--){
+        multiplicacion = multiplicado * (numb-1);
+        multiplicado = multiplicacion;
+    }
+    $panelEjercicio.innerHTML = 
+            `<h3>Factorial</h3>
+            <p>${"El factorial de " + texto + " es " + multiplicado}</p>
+            `;
 }
 
+//Evento de click para que aparezcan los botones de los ejercicios.
 let i = 0;
 $dropdown.addEventListener('click', ()=>{
     if (i % 2 == 0){
         $botones.classList.add('show');
+        $flecha.classList.replace("ri-arrow-right-s-fill", "ri-arrow-down-s-fill");
     }else{
         $botones.classList.remove('show');
+        $flecha.classList.replace("ri-arrow-down-s-fill", "ri-arrow-right-s-fill");
     }
     i++;
 });
