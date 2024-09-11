@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo-700x700.png">
     <title>Ejercicios básicos JavaScript</title>
 </head>
@@ -16,20 +17,35 @@
     
 
     <nav>
-        <button class="ej" id="e1">Ejercicio 1</button>
-        <button class="ej" id="e2">Ejercicio 2</button>
-        <button class="ej" id="e3">Ejercicio 3</button>
-        <button class="ej" id="e4">Ejercicio 4</button>
-        <button class="ej" id="e5">Ejercicio 5</button>
-        <button class="ej" id="e6">Ejercicio 6</button>
-        <button class="ej" id="e7">Ejercicio 7</button>
-        <button class="ej" id="e8">Ejercicio 8</button>
+        <div id="dropdown">Ejercicios <i id="flecha" class="ri-arrow-right-s-fill"></i></div>
+        <div class="botones">
+            <button onclick="ejercicio1()">Ejercicio 1</button>
+            <button onclick="ejercicio2()">Ejercicio 2</button>
+            <button onclick="ejercicio3()">Ejercicio 3</button>
+            <button onclick="ejercicio4()">Ejercicio 4</button>
+            <button onclick="ejercicio5()">Ejercicio 5</button>
+            <button onclick="ejercicio6()">Ejercicio 6</button>
+            <button onclick="ejercicio7()">Ejercicio 7</button>
+            <button onclick="ejercicio8()">Ejercicio 8</button>
+        </div>
     </nav>
+
     <!--Todos los ejercicios se muestran en este div-->
     <div id="mostrarEjercicio">
-        
+        <p><i class="ri-information-line"></i> Elige un ejercicio para mostrarlo por pantalla y pulsa otra vez si quieres verlo de nuevo</p>
     </div>
 
-    <script src="script/ejercicio1.js"></script>
+    <template id="template">
+        <div id="fondo">
+            <div class="modal">
+                <h2>¿Quieres continuar?</h2>
+                <div id="modalBotones">
+                    <button id="btnNo">No</button>
+                    <button id="btnSi">Sí</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="script/main.js"></script>
 </body>
 </html>
