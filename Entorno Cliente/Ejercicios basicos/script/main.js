@@ -154,8 +154,21 @@ function ejercicio6(){
 
 function ejercicio7(){
     $panelEjercicio.innerHTML = "";
-
     let numeros = "";
+    let numero = 0;
+    let cont = 0;
+
+    for(let i = 0; i <= 100; i++){
+        numero += i;
+        if(numero % 2 != 0 && numero < 1000){
+            cont++;
+            if(cont % 4 == 0){
+                numeros += numero + ", <br>";
+            } else {
+                numeros += numero + ", ";
+            }
+        }
+    }
 
     $panelEjercicio.innerHTML = 
             `<h3>Sumatorios</h3>
