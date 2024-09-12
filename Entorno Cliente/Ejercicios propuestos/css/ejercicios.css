@@ -1,0 +1,42 @@
+.boton{
+    background-color: #7373ec;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 999999px;
+    transition: ease .2s;
+
+    &:hover{
+        background-color: #5454ac;
+    }
+}
+
+input[type="text"]{
+    border-radius: 9999px;
+    padding: 5px 10px;
+    transition: ease .3s;
+    outline: none;
+    border: none;
+    border: 3px solid;
+
+    &:focus{
+        border-color: #5454ac;
+    }
+}
+
+#ejercicio1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & div{
+        display: flex;
+        gap: 5px;
+
+        & input{
+            width: 100%;
+        }
+    }
+}

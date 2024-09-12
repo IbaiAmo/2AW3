@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ejercicios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="icon" href="https://logos-download.com/wp-content/uploads/2019/01/JavaScript_Logo-700x700.png">
-    <title>Ejercicios Básicos JavaScript</title>
+    <title>Ejercicios Propuestos JavaScript</title>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
     
 
     <nav>
-        <div id="dropdown">Ejercicios<i id="flecha" class="ri-arrow-right-s-fill"></i>
+        <div id="dropdown">Ejercicios propuestos<i id="flecha" class="ri-arrow-right-s-fill"></i>
         </div>
         <div class="botones">
             <button onclick="ejercicio1()">Ejercicio 1</button>
@@ -27,6 +28,8 @@
             <button onclick="ejercicio6()">Ejercicio 6</button>
             <button onclick="ejercicio7()">Ejercicio 7</button>
             <button onclick="ejercicio8()">Ejercicio 8</button>
+            <button onclick="ejercicio9()">Ejercicio 9</button>
+            <button onclick="ejercicio10()">Ejercicio 10</button>
         </div>
     </nav>
 
@@ -36,16 +39,16 @@
     </div>
 
     <template id="template">
-        <div id="fondo">
-            <div class="modal">
-                <h2>¿Quieres continuar?</h2>
-                <div id="modalBotones">
-                    <button id="btnNo">No</button>
-                    <button id="btnSi">Sí</button>
-                </div>
+        <div id="ejercicio1">
+            <h3>Calcular longitud de un String</h3>
+            <div>
+                <input type="text" placeholder="Escribe una palabra o texto">
+                <button class="boton">Calcular</button>
             </div>
+            <p></p>
         </div>
     </template>
+
     <script src="script/main.js"></script>
 </body>
 </html>
