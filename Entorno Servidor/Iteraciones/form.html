@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2875/2875409.png">
+    <title>Formularios Iteraciones</title>
+</head>
+<body>
+    <!--Esto es para el fondo animado-->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+
+    <div class="portada" data-aos="fade-down">
+        <h1 id="title">PHP Formularios</h1>
+        <p>Haz scroll hacia abajo</p>
+        <i class="ri-arrow-down-wide-line"></i>
+    </div>
+
+<main>
+    <div class="formulario" data-aos="fade-right">
+        <h2>Ejercicio 6</h2>
+        <form action="php/ejercicio6.php" id="ej6">
+            <input type="number" name="longitud" placeholder="Introduce un número">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="formulario" data-aos="fade-left">
+        <h2>Ejercicio 7</h2>
+        <form action="php/ejercicio7.php" id="ej7">
+            <input type="number" name="num1" placeholder="Introduce un número">
+            <input type="number" name="num2" placeholder="Introduce otro número">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="formulario" data-aos="fade-right">
+        <h2>Ejercicio 8</h2>
+        <form action="php/ejercicio8.php" id="ej8">
+            <div class="radio">
+                <div>
+                    <input type="radio" name="pares" id="r1" value="TRUE" required>
+                    <label for="r1">Par</label>
+                </div>
+                <div>
+                    <input type="radio" name="pares" id="r2" value="FALSE" required>
+                    <label for="r2">Impar</label>
+                </div>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="formulario" data-aos="fade-left">
+        <h2>Ejercicio 9</h2>
+        <form action="php/ejercicio9.php" id="ej9">
+            <input type="number" name="num" placeholder="Introduce un número">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="formulario" data-aos="fade-right">
+        <h2>Ejercicio 10</h2>
+        <form action="php/ejercicio10.php" id="ej10">
+            <input type="number" name="num" placeholder="Introduce un número">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="formulario" data-aos="fade-left">
+        <h2>Ejercicio 11</h2>
+        <form action="php/ejercicio11.php" id="ej11">
+            <input type="number" name="num" placeholder="Introduce un número">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</main>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+    </script>
+</body>
+</html>
