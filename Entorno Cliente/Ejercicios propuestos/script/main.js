@@ -6,6 +6,7 @@ const $botones = document.querySelector('.botones');
 const $body = document.querySelector('body');
 const $template = document.getElementById("template");
 
+
 function ejercicio1(){
     $panelEjercicio.innerHTML = "";
     const clone = $template.content.cloneNode(true);
@@ -15,7 +16,10 @@ function ejercicio1(){
     let texto = clone.querySelector('#ejercicio1 > p');
 
     boton.addEventListener('click', ()=>{
-        texto.textContent = input.value + " tiene " + input.value.length + " caracteres";
+        if(input.value != ""){
+            texto.textContent = input.value + " tiene " + input.value.length + " caracteres";
+            input.value = "";
+        }
     });
 
     $panelEjercicio.appendChild(ej1);
@@ -23,23 +27,7 @@ function ejercicio1(){
 
 function ejercicio2(){
     $panelEjercicio.innerHTML = "";
-    let numeros = "";
-    let contarFilas = 0;
-
-    for(let i = 1; i <= 100; i++){
-        if (i % 2 == 0){
-            numeros += i + ",";
-            contarFilas++;
-        }
-        
-        if (contarFilas % 5 == 0){
-            numeros += "<br>";
-        }  
-    }
-
-    $panelEjercicio.innerHTML = 
-    `<h3>Números pares entre 1 y 100</h3>
-    <p>${numeros}</p>`;
+    const clone = $template.content.cloneNode(true);
 }
 
 function ejercicio3(){
