@@ -17,8 +17,9 @@ function ejercicio1(){
 
     boton.addEventListener('click', ()=>{
         if(input.value != ""){
-            texto.textContent = input.value + " tiene " + input.value.length + " caracteres";
-            input.value = "";
+            texto.textContent = "Tiene " + input.value.length + " caracteres";
+            console.log(input.value.split(""));
+            
         }
     });
 
