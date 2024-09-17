@@ -40,3 +40,37 @@ input[type="text"]{
         }
     }
 }
+
+#ejercicio3{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    user-select: none;
+
+    & button{
+        font-size: 16px;
+    }
+}
+
+#red{
+    background-color: red;
+}
+
+#yellow{
+    background-color: yellow;
+    color: black;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}
+#pink{
+    background-color: pink;
+    color: black;
+}
