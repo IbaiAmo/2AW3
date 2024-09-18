@@ -12,7 +12,7 @@
     }
 }
 
-input[type="text"]{
+input[type="text"], input[type="date"]{
     border-radius: 9999px;
     padding: 5px 10px;
     transition: ease .3s;
@@ -25,7 +25,8 @@ input[type="text"]{
     }
 }
 
-#ejercicio1{
+
+#ejercicio1, #ejercicio5, #ejercicio6{
     width: 100%;
     display: flex;
     flex-direction: column;
