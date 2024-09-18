@@ -26,7 +26,7 @@ input[type="text"], input[type="date"]{
 }
 
 
-#ejercicio1, #ejercicio5, #ejercicio6{
+#ejercicio1, #ejercicio5, #ejercicio6, #ejercicio8{
     width: 100%;
     display: flex;
     flex-direction: column;

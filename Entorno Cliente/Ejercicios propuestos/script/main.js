@@ -100,8 +100,6 @@ function ejercicio5(){
     let texto = clone.querySelector('#ejercicio5 > #aviso');
     let recordText = clone.querySelector('#ejercicio5 > #record');
 
-    recordText.textContent = "Tu record: " + localStorage.getItem("recordTiempo");
-
     let startedWriting = false; //Para saber si ha empezado a escribir.
     let fechaInicio = new Date(); //esta fecha es para luego poder cambiarla y sin errores
 
@@ -136,16 +134,8 @@ function ejercicio5(){
             input.value = "";
             startedWriting = false;
             cont = 0;
-            record(secs);
         }else{
             texto.innerHTML = "Empieza a escribir para calcular el tiempo";
-        }
-    }
-
-    function record(secs){
-        if (secs < localStorage.getItem("recordTiempo")){
-            localStorage.setItem("recordTiempo", secs);
-            recordText.textContent = "tu record: " + localStorage.getItem("recordTiempo");
         }
     }
 
@@ -178,11 +168,36 @@ function ejercicio6(){
 
 function ejercicio7(){
     $panelEjercicio.innerHTML = "";
-    
+
 }
 
 function ejercicio8(){
     $panelEjercicio.innerHTML = "";
+    const clone = $template.content.cloneNode(true);
+    const ej8 = clone.getElementById('ejercicio8');
+    const input = clone.querySelector('#ejercicio8 > div > input');
+    const boton = clone.querySelector('#ejercicio8 > div > button');
+    const aviso = clone.querySelector('#ejercicio8 > p');
+    const tabla = clone.querySelector('#ejercicio8 > table');
+
+    boton.onclick = () =>{
+        if (input.value.trim() == ""){
+            aviso.textContent = "Escribe algo para calcular la longitud.";
+        }else{
+            aviso.textContent = "";
+            tabla.innerHTML = '<tr id="pos"><td>Posición</td>';
+            let cadena = input.value;
+            for(let i = 0; i < cadena.length; i++){
+                tabla.innerHTML += `<td>${i}</td>`;
+            }
+            tabla.innerHTML += "</tr><tr><td>Contenido</td>"; 
+            for(let i = 0; i < cadena.length; i++){
+                tabla.innerHTML += `<td>${cadena.charAt(i)}</td>`;
+            }
+            tabla.innerHTML += "</td>";
+        }
+    }
+    $panelEjercicio.appendChild(ej8);
 }
 
 function ejercicio9(){
@@ -205,8 +220,3 @@ $dropdown.addEventListener('click', (e)=>{
     }
     i++;
 });
-
-
-
-
-
