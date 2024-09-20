@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/datos.css">
+    <title>Ejercicio 2 - Datos personales</title>
+</head>
+<body>
+    <main>
+        <h1>Datos personales</h1>
+        <form action="../php/datos.php" method="post">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellidos" placeholder="Apellidos">
+            <div id="edadPeso">
+                <input type="number" name="edad" placeholder="Edad">
+                <input type="number" name="peso" placeholder="Peso">
+            </div>
+            <div class="separador"></div>
+            <div id="radioBtns">
+                <div>
+                    <strong class="texto">Sexo:</strong>
+                    <div class="radio">
+                        <div>
+                            <input type="radio" id="s1" name="sexo" value="Hombre">
+                            <label for="s1">Hombre</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="s2" name="sexo" value="Mujer">
+                            <label for="s2">Mujer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <strong class="texto">Estado civil:</strong>
+                    <div class="radio">
+                        <div>
+                            <input type="radio" id="e1" name="estado" value="Soltero">
+                            <label for="e1">Soltero</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="e2" name="estado" value="Casado">
+                            <label for="e2">Casado</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

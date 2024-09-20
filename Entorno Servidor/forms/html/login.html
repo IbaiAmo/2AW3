@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5087/5087579.png">
+    <title>Login - Iniciar sesión</title>
+</head>
+<body>
+    <main>
+        <div class="container" data-aos="zoom-in">
+            <h1>Login</h1>
+            <form action="../php/login.php" method="post">
+                <div class="inputs">
+                    <input type="text" autocomplete="off" name="user" placeholder="Escribe tu email" required>
+                    <i class="ri-mail-line"></i>
+                </div>
+                <div class="inputs">
+                    <input type="password" name="passwd" placeholder="Escribe tu contraseña" required>
+                    <i class="ri-lock-line"></i>
+                </div>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
