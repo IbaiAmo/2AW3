@@ -6,5 +6,26 @@ Se trandrá que mostrar en pantalla cada día y valor almacenado en el array as�
 media de todos los valores guadados en el array.
 */
 
-$semana = array();
+$semana = array(
+    "Lunes" => 20,
+    "Martes" => 70,
+    "Miércoles" => 46,
+    "Jueves" => 23,
+    "Viernes" => 80,
+    "Sábado" => 34,
+    "Domingo" => 11,
+);
+
+$suma = 0;
+
+foreach($semana as $key => $value){
+    echo $key . ": " . $value . "<br>";
+    $suma += $value;
+}
+
+echo "<br>Suma: " . $suma . "<br>";
+echo "Media: " . $suma / count($semana);
+
+
+
 ?>
