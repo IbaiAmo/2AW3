@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="https://icon-library.com/images/forms-icon-png/forms-icon-png-10.jpg">
     <link rel="stylesheet" href="../css/datos.css">
     <title>Ejercicio 2 - Datos personales</title>
 </head>
 <body>
+    <div id="logo" data-aos="fade-up">
+        <img src="https://cdn3.iconfinder.com/data/icons/hand-drawn-flat-profile-1/1200/6-512.png" alt="persona" data-aos="zoom-in">
+        <p data-aos="fade-right" data-aos-delay="300">Rellena el siguiente formulario para mostrar una pantalla con tus respuestas!<span></span></p>
+    </div>
     <main>
-        <h1>Datos personales</h1>
-        <form action="../php/datos.php" method="post">
+        <h1 data-aos="fade-down" data-aos-easing="ease-out">Datos personales</h1>
+        <form action="../php/datos.php" method="post" data-aos="zoom-in" data-aos-delay="300" data-aos-easing="ease-out">
             <input type="text" name="nombre" placeholder="Nombre">
             <input type="text" name="apellidos" placeholder="Apellidos">
             <div id="edadPeso">
@@ -43,10 +49,34 @@
                             <input type="radio" id="e2" name="estado" value="Casado">
                             <label for="e2">Casado</label>
                         </div>
+                        <div>
+                            <input type="radio" id="e3" name="estado" value="Otro">
+                            <label for="e3">Otro</label>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div id="aficiones">
+                <strong class="texto">Aficiones:</strong>
+                <div id="gridCont">
+                    <div><input type="checkbox" name="aficiones" id="a1"><label for="a1">Cine</label></div>
+                    <div><input type="checkbox" name="aficiones" id="a2"><label for="a2">Literatura</label></div>
+                    <div><input type="checkbox" name="aficiones" id="a3"><label for="a3">Tebeos</label></div>
+                    <div><input type="checkbox" name="aficiones" id="a4"><label for="a4">Deporte</label></div>
+                    <div><input type="checkbox" name="aficiones" id="a5"><label for="a5">Música</label></div>
+                    <div><input type="checkbox" name="aficiones" id="a6"><label for="a6">Televisión</label></div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </div>
         </form>
     </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

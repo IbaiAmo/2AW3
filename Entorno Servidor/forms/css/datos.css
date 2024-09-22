@@ -19,6 +19,45 @@ body{
     background-position: top left;
     display: flex;
     justify-content: end;
+    padding-bottom: 30px;
+    user-select: none;
+}
+
+#logo{
+    position: fixed;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fit-content;
+    margin-left: 50px;
+
+    & img{
+        width: 200px;
+    }
+
+    & p{
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: -50px;
+        left: 180px;
+        width: 250px;
+        color: #000000;
+        box-shadow: 0px 0px 6px #0000005a;
+        
+        & span{
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: -10px;
+            width: 50px;
+            height: 50px;
+            background: inherit;
+            z-index: -99999;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+    }
 }
 
 main{
@@ -45,7 +84,7 @@ form{
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    width: 100%;
+    width: 90%;
     max-width: 500px;
     gap: 40px;
 
@@ -81,18 +120,150 @@ form{
 
 .texto{
     color: var(--texto);
+    font-size: 20px;
 }
 
 #radioBtns{
-    font-size: 20px;
-    text-align: center;
     display: flex;
-    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 
 
     & .radio{
         display: flex;
         gap: 20px;
+        margin-top: 10px;
+    }
+}
+
+#aficiones{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+#gridCont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin-top: 10px;
+    justify-items: center;
+    gap: 20px;
+
+    & div{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+label{
+    font-size: 20px;
+}
+
+.buttons{
+    display: flex;
+    gap: 40px;
+
+    & input{
+        all: unset;
+        border-radius: 9999px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: ease .3s;
+        font-size: 18px;
+
+        &:nth-child(1){
+            background-color: var(--principal);
+            color: white;
+
+            &:hover{
+                background-color: var(--secundario);
+            }
+        }
+
+        &:nth-child(2){
+            background-color: transparent;
+            border: 2px solid var(--principal);
+            color: var(--principal);
+
+            &:hover{
+                color: var(--secundario);
+            }
+        }
+    }
+}
+
+@media (width < 1200px){
+    body{
+        background-position-x: -300px;
+    }
+
+    #logo{
+        left: 0;
+
+        & p{
+            width: 200px;
+
+            & span{
+                top: 40px;
+            }
+        }
+    }
+}
+
+@media (width < 900px){
+    #logo{
+        left: 0;
+
+        & img{
+            width: 150px;
+        }
+
+        & p{
+            left: 140px;
+            font-size: 14px;
+            width: 180px;
+
+            & span{
+                top: 30px;
+            }
+        }
+    }
+}
+
+@media (width < 770px){
+    body{
+        background-position-x: -600px;
+    }
+
+    main{
+        width: 100%;
+
+        & h1{
+            font-size: 30px;
+        }
+    }
+
+    #logo{
+        display: none;
+    }
+}
+
+@media (width < 620px){
+    body{
+        background-position-x: -700px;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    #gridCont{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
     }
 }
 
