@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicio 12 - DOM básico y atributos XHTML</title>
+
+<style type="text/css">
+.oculto { display: none; }
+.visible { display: inline; } 
+</style>
+
+<script type="text/javascript">
+    
+function muestra() {
+    const p = document.getElementById('pNuevo');
+    const a = document.getElementById('enlace');
+    p.classList.add('visible');
+    a.classList.add('oculto');
+}
+</script>
+</head>
+
+<body>
+
+<p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. <span id="adicional" class="oculto">Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque. Donec lacus neque, vehicula in, eleifend vitae, venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam ullamcorper. Duis accumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis erat eu odio. Praesent id metus.</span></p>
+<a id="enlace" href="#" onclick="muestra();">Seguir leyendo</a>
+<p id="pNuevo" class="oculto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cumque voluptatem rem aperiam voluptate, odit quia nemo quasi accusantium alias quam voluptas impedit maxime. Assumenda ipsa molestiae totam inventore accusamus aspernatur! Expedita fugit explicabo recusandae sequi vitae, repellat amet? Quam natus illo, autem sed perferendis fuga eum vero asperiores iste at hic consequuntur totam quidem ab, est modi optio repudiandae eos sapiente quis nesciunt veritatis iusto enim magni. Consequuntur cumque unde, nemo praesentium harum minima similique laborum aperiam adipisci odit ipsam rem dolorum neque laudantium voluptatum incidunt nostrum est dolorem velit voluptatibus, obcaecati quis. Necessitatibus, quam omnis pariatur amet ad illo soluta accusamus officia atque animi, placeat fugiat quibusdam facilis deserunt commodi quisquam minima aspernatur veritatis blanditiis nisi delectus repellendus unde. Praesentium eos voluptatem obcaecati nostrum voluptate iusto deserunt commodi modi eius architecto earum temporibus, debitis sapiente magni sed ullam perspiciatis, eveniet impedit, quia ut et dolores cupiditate. In blanditiis, laudantium dignissimos nisi quidem, esse magni deleniti autem obcaecati hic explicabo rem! Voluptas sit hic cumque nisi magni porro obcaecati reprehenderit suscipit consectetur vero doloribus, sint pariatur quia distinctio dicta vel illo facere enim! Quis molestiae temporibus numquam dignissimos quasi. Perferendis temporibus, illum quae iste consectetur nesciunt earum numquam, minima voluptatem quibusdam vitae deserunt perspiciatis velit porro? Aliquid, omnis. Minus delectus pariatur ad ipsa! Dolore temporibus voluptas ratione facere quo tempora voluptatem totam nihil delectus soluta quaerat doloremque aspernatur quod vel ea laboriosam necessitatibus eaque error, repellendus, beatae voluptatibus atque nostrum dicta. Illum dolorum repudiandae quos recusandae ipsum ea expedita libero, maxime aut eaque quia nihil! Cum laudantium asperiores, iure, ullam ipsum, laborum voluptatum mollitia qui reiciendis repudiandae tempora voluptas? Odio ipsum quis vitae saepe a soluta magnam. Animi libero explicabo beatae a officia nostrum consequatur! Dolorum eum sunt laudantium iste quasi iure quia soluta non nulla, necessitatibus, earum eveniet facere. Aliquid quibusdam adipisci atque animi pariatur quae itaque incidunt ex modi? Mollitia fuga voluptate nostrum provident? Omnis iure ratione magnam officia facere minus natus repudiandae veniam amet, provident quas ipsa voluptatem necessitatibus ex fugiat consectetur aliquam commodi error? Laudantium quo molestiae corporis perspiciatis minus fugiat eius, cupiditate commodi saepe! Reprehenderit, exercitationem! Enim nesciunt expedita rem! Quasi corporis culpa, nihil sunt nemo fuga nostrum eius odit rerum harum iure, dignissimos quam quidem eligendi aspernatur corrupti! Vel ad, nulla rem recusandae voluptates iusto voluptas accusantium velit quos totam libero vero tenetur consequatur eius id, reprehenderit beatae ipsam ipsa sed fuga saepe.</p>
+</body>
+</html>
