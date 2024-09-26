@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "medieval";
+}
+
+@font-face{
+    font-family: "medieval";
+    src: url(../Seagram\ tfb.ttf);
+}
+
+:root{
+    scrollbar-width: thin;
+}
+
+body{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/022/807/065/large_2x/village-fantasy-backdrop-concept-art-realistic-illustration-background-with-generative-ai-free-photo.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+#atributos{
+    height: fit-content;
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    gap: 30px;
+    box-shadow: 0px 10px 7px #0000008a;
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-papel-grunge_1048-10791.jpg?t=st=1727176034~exp=1727179634~hmac=159dae414d6d38fa70805f6bb7b2c59d79b0a01d3aa49f15ebab97e2f0fc067e&w=740");
+
+    & h1{
+        text-align: center;
+    }
+
+    & div{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        gap: 25px;
+        font-size: 23px;
+    }
+}
+
+#volver{
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-papel-grunge_1048-10791.jpg?t=st=1727176034~exp=1727179634~hmac=159dae414d6d38fa70805f6bb7b2c59d79b0a01d3aa49f15ebab97e2f0fc067e&w=740");
+    background-size: cover;
+    font-size: 20px;
+    box-shadow: 0px 8px 7px #0000008a;
+
+    & a{
+        all: unset;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+}
+
+@media (width < 430px){
+    #atributos{
+        & div{
+            font-size: 17px;
+        }
+    }
+
+    #volver{
+        font-size: 17px;
+    }
+}
+

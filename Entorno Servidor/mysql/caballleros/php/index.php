@@ -100,16 +100,7 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
-        // let main = document.querySelector("main");
-        // let tabla = document.querySelector("#tablaCont");
-        // main.removeChild(tabla);
-
-        // setTimeout(() =>{
-        //     main.appendChild(tabla);
-        // }, 3000)
-
-        
+        AOS.init();        
     </script>
 </body>
 </html>

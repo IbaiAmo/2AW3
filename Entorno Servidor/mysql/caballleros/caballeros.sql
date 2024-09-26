@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2024 a las 13:57:58
+-- Tiempo de generación: 26-09-2024 a las 13:55:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -51,8 +51,7 @@ INSERT INTO `caballeros` (`id`, `nombre`, `fuerza`, `ataque`, `defensa`, `experi
 (7, 'Maximiliano', 870, 555, 712, 9900, '1299-11-05', 0),
 (8, 'Pablus maximus', 459, 908, 220, 445, '1599-02-19', 1),
 (9, 'Jonis jhonson', 590, 300, 999, 21893, '1221-06-08', 1),
-(10, 'Henry Percy', 690, 700, 530, 8907, '1364-05-20', 0),
-(11, 'Rey Arturo', 999, 999, 999, 99999, '1200-03-12', 0);
+(10, 'Henry Percy', 690, 700, 530, 8907, '1364-05-20', 0);
 
 --
 -- Índices para tablas volcadas
