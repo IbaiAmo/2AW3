@@ -54,7 +54,7 @@ aside{
 #e3{
     background-color: #0000007a;
     width: 100%;
-    height: 650px;
+    height: 550px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -74,12 +74,13 @@ aside{
     scrollbar-width: none;
     scroll-behavior: smooth;
 
-    & div{
+    & li{
         background-color: #14213d;
         color: white;
         padding: 10px;
         border-radius: 10px;
         max-width: 60%;
+        list-style: none;
 
         & p{
             font-size: 20px;
