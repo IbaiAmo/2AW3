@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="https://cdn3d.iconscout.com/3d/free/thumb/free-javascript-9294848-7577991.png?f=webp">
     <link rel="stylesheet" href="styles/styles.css">
     <title>JS DOM</title>
@@ -10,26 +11,33 @@
 <body>
     <!--En esta página se mostrarán los ejercicios, 3, 4, 5 y 6-->
     <main>
-            <div class="ejercicio" id="e3">
-
+        <div id="e3">
+            <div id="mensajes">
             </div>
-            <div class="ejercicio" id="e4">
-
+            <div id="inputs">
+                <div>
+                    <textarea name="mensaje" id="mensajeInput" placeholder="Escribe tu mensaje..."></textarea>
+                    <button class="botones" id="enviar"><i class="ri-send-plane-fill"></i></button>
+                    <label for="foto" class="botones"><i class="ri-image-fill"></i></label>
+                    <input type="file" id="foto" hidden accept="image/png, image/jpeg" multiple></input>
+                </div>
             </div>
-            <div class="ejercicio" id="e5">
+        </div>
 
-            </div>
-            <div class="ejercicio" id="e6">
-
-            </div>
-
-        <!-- <aside>
+        <aside>
             <button class="btnEj">Ejercicio 3</button>
             <button class="btnEj">Ejercicio 4</button>
             <button class="btnEj">Ejercicio 5</button>
             <button class="btnEj">Ejercicio 6</button>
-        </aside> -->
+        </aside>
     </main>
 
+    <template id="template">
+        <div class="mensaje">
+            <p></p>
+        </div>
+    </template>
+
+    <script src="script/main.js"></script>
 </body>
 </html>
