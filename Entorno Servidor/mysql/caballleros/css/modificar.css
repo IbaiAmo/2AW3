@@ -13,3 +13,107 @@
 :root{
     scrollbar-width: thin;
 }
+
+body{
+    background-image: url("https://static.vecteezy.com/system/resources/previews/033/692/526/large_2x/abstract-background-or-texture-of-rusty-metal-surface-with-cracks-and-scratches-nature-medieval-texture-background-medieval-background-textures-ai-generated-free-photo.jpg");
+    background-size: cover;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.formulario{
+    height: fit-content;
+    padding: 30px 40px;
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-papel-grunge_1048-10791.jpg?t=st=1727176034~exp=1727179634~hmac=159dae414d6d38fa70805f6bb7b2c59d79b0a01d3aa49f15ebab97e2f0fc067e&w=740");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0px 8px 7px #0000008a;
+}
+
+input[type="text"], input[type="date"], input[type="number"]{
+    all: unset;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    width: 100%;
+
+    &::placeholder{
+        color: rgb(30, 30, 30);
+    }
+}
+
+.radios{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+
+    & label{
+        display: flex;
+        gap: 10px;
+
+        & input{
+            accent-color: black;
+        }
+    }
+}
+
+.submits{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+input[type="submit"]{
+    all: unset;
+    cursor: pointer;
+    padding: 7px 14px;
+    margin-top: 10px;
+    transition: ease .2s;
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 0px;
+        background-color: black;
+        transition: ease .4s;
+    }
+
+    &:hover::before{
+        width: 100%;
+    }
+}
+
+label{
+    font-size: 30px;
+}
+
+#volver{
+    background-image: url("https://img.freepik.com/foto-gratis/fondo-papel-grunge_1048-10791.jpg?t=st=1727176034~exp=1727179634~hmac=159dae414d6d38fa70805f6bb7b2c59d79b0a01d3aa49f15ebab97e2f0fc067e&w=740");
+    background-size: cover;
+    font-size: 17px;
+    box-shadow: 0px 8px 7px #0000008a;
+
+    & a{
+        all: unset;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+}
+

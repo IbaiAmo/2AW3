@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2024 a las 13:55:30
+-- Tiempo de generación: 27-09-2024 a las 11:29:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,11 +43,11 @@ CREATE TABLE `caballeros` (
 --
 
 INSERT INTO `caballeros` (`id`, `nombre`, `fuerza`, `ataque`, `defensa`, `experiencia`, `fecha_nacimiento`, `activo`) VALUES
-(1, 'Sir Anthony', 98, 87, 45, 2138, '1324-08-26', 0),
-(2, 'Guts', 999, 999, 999, 247827, '1400-05-01', 1),
+(1, 'Sir Anthony', 98, 87, 45, 2138, '2024-09-07', 1),
+(2, 'Guts', 99, 999, 999, 247827, '2024-09-17', 0),
 (3, 'El Cid Campeador', 300, 500, 210, 88598, '1099-07-10', 0),
-(4, 'Sir Anthony', 98, 87, 45, 2138, '1324-08-26', 1),
-(6, 'Ibus amus', 309, 890, 223, 7839, '1444-04-17', 1),
+(4, 'Sir Anthony', 98, 87, 45, 2138, '2024-09-17', 0),
+(6, 'Ibus amo', 30, 890, 223, 7839, '1444-04-17', 1),
 (7, 'Maximiliano', 870, 555, 712, 9900, '1299-11-05', 0),
 (8, 'Pablus maximus', 459, 908, 220, 445, '1599-02-19', 1),
 (9, 'Jonis jhonson', 590, 300, 999, 21893, '1221-06-08', 1),
