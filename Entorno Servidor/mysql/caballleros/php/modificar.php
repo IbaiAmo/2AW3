@@ -34,8 +34,13 @@ $mysqli->close();
         <input type="number" name="defensa" placeholder="Defensa" autocomplete="off" value="<?=$defensa?>">
         <input type="number" name="experiencia" placeholder="Experiencia" autocomplete="off" value="<?=$experiencia?>">
         <input type="date" name="fechaNac" autocomplete="off" value="<?=$fechaNac?>">
-        <label for="activo"><?php echo $activo ? "Activo" : "Inactivo";?></label>
-        <input type="checkbox" id="activo" style="display: none;">
+        <?php if($activo){?>
+            <label class="activo" for="activo" style="color: green;">Activo</label>
+            <input type="checkbox" id="activo" name="activo" hidden checked>
+        <?php }else{ ?>
+            <label class="activo" for="activo" style="color: red;">Inactivo</label>
+            <input type="checkbox" id="activo" name="activo" hidden>
+        <?php } ?>    
 
         <div class="submits">
             <input type="submit" name="boton" value="Guardar">
@@ -49,5 +54,19 @@ $mysqli->close();
             <p>volver</p>
         </a>
     </div>
+
+    <script>
+        const activo = document.querySelector('.activo');
+
+        activo.addEventListener('click', () =>{
+            if(activo.textContent == "Activo"){
+                activo.textContent = "Inactivo";
+                activo.style.color = "red";
+            }else{
+                activo.textContent = "Activo";
+                activo.style.color = "green";
+            }
+        })
+    </script>
 </body>
 </html>

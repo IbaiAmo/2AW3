@@ -27,6 +27,9 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `caballeros`
 --
 
+DROP DATABASE IF EXISTS caballeroscas;
+CREATE DATABASE caballeroscas;
+
 CREATE TABLE `caballeros` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,

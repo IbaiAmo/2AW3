@@ -120,6 +120,7 @@ label{
 .activo{
     font-size: 20px;
     cursor: pointer;
+    user-select: none;
 
     &:hover{
         scale: 0.95;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/5305/5305216.png?semt=ais_hybrid">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/insertar.css">
+    <title>Crear caballero</title>
+</head>
+<body>
+    <form class="formulario" action="./insertar.php" method="post">
+        <h1>Crear caballero</h1>
+        <input type="text" name="nombre" placeholder="Nombre" autocomplete="off" required>
+        <input type="number" name="fuerza" placeholder="Fuerza" autocomplete="off">
+        <input type="number" name="ataque" placeholder="Ataque" autocomplete="off">
+        <input type="number" name="defensa" placeholder="Defensa" autocomplete="off">
+        <input type="number" name="experiencia" placeholder="Experiencia" autocomplete="off">
+        <input type="date" name="fechaNac" autocomplete="off" value="<?=$fechaNac?>">
+        <label class="activo" for="activo" style="color: green;">Activo</label>
+        <input type="checkbox" id="activo" name="activo" hidden checked value="1">
+        <input type="submit" value="Crear">
+    </form>
+    
+    <div id="volver">
+        <a href="./index.php">
+            <i class="ri-arrow-left-double-line"></i>
+            <p>volver</p>
+        </a>
+    </div>
+
+    <script>
+        const activo = document.querySelector('.activo');
+
+        activo.addEventListener('click', () =>{
+            if(activo.textContent == "Activo"){
+                activo.textContent = "Inactivo";
+                activo.style.color = "red";
+            }else{
+                activo.textContent = "Activo";
+                activo.style.color = "green";
+            }
+        })
+    </script>
+</body>
+</html>

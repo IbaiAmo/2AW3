@@ -53,11 +53,21 @@ main{
         }
     }
 
+    & .tableNav{
+        max-width: 900px;
+        width: 90%;
+        height: 100px;
+
+        & .insertar{
+            display: flex;
+            gap: 5px;
+        }
+    }
+
     & #tablaCont{
         max-width: 900px;
         width: 90%;
         height: 400px;
-        margin-top: 50px;
         position: relative;
         overflow-y: auto;
         scrollbar-width: none;

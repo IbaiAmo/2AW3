@@ -27,8 +27,15 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
             <img src="https://e7.pngegg.com/pngimages/745/211/png-clipart-paper-text-frame-brown-pattern-medieval-european-border-background-brown-wooden-f-border-texture-thumbnail.png">
         </div>
 
+        <div class="tableNav">
+            <a class="insertar" href="./insertar.html">
+                <i class="ri-add-line"></i>
+                <p>Crear caballero</p>
+            </a>
+        </div>    
+
         <div id="tablaCont" data-aos="zoom-in" data-aos-easing="ease-out" data-aos-delay="300">
-            <table>
+        <table>
                 <thead>
                     <tr>
                         <th>Id</th>
