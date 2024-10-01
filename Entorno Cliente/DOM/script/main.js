@@ -27,3 +27,5 @@ inputFoto.onchange = () =>{
         panelMensajes.scrollTop = panelMensajes.scrollHeight;
     }
 }
+
+

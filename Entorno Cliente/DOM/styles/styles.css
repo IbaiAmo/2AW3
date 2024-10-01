@@ -51,9 +51,18 @@ aside{
     }
 }
 
+.activo{
+    display: block;
+}
+
+.ejercicios{
+    width: 100%;
+}
+
 #e3{
     background-color: #0000007a;
     width: 100%;
+    display: none;
     height: 550px;
     border-radius: 20px;
     display: flex;
@@ -128,4 +137,12 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/*ejercicio 4*/
+
+#e4{
+    background-color: #14213d;
+    height: 400px;
+    width: 100%;
 }
