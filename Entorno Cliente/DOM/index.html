@@ -11,33 +11,27 @@
 <body>
     <!--En esta página se mostrarán los ejercicios, 3, 4, 5 y 6-->
     <main>
-        <div class="ejercicios">
-            <div id="e3" class="activo">
-                <ul id="mensajes">
-                </ul>
-                <div id="inputs">
-                    <div>
-                        <textarea name="mensaje" id="mensajeInput" placeholder="Escribe tu mensaje..."></textarea>
-                        <button class="botones" id="enviar"><i class="ri-send-plane-fill"></i></button>
-                        <label for="foto" class="botones"><i class="ri-image-fill"></i></label>
-                        <input type="file" id="foto" hidden accept="image/png, image/jpeg" multiple></input>
-                    </div>
+        <h2><i class="ri-information-line"></i> Pulsa un boton para mostrar un ejercicio.</h2>
+        <h2 id="info"><i class="ri-information-line"></i> Desliza hacia la izquierda para mostrar un menu con los ejercicios.</h2>
+        <div id="e3" class="inActivo ejercicios">
+            <ul id="mensajes">
+            </ul>
+            <div id="inputs">
+                <div>
+                    <textarea name="mensaje" id="mensajeInput" placeholder="Escribe tu mensaje..."></textarea>
+                    <button class="botones" id="enviar"><i class="ri-send-plane-fill"></i></button>
+                    <label for="foto" class="botones"><i class="ri-image-fill"></i></label>
+                    <input type="file" id="foto" hidden accept="image/png, image/jpeg" multiple></input>
                 </div>
             </div>
-
-            <!-- <div id="e4">
-
-            </div> -->
-        </div>
-
-
-        <aside>
-            <button class="btnEj" onclick="ejercicio3()">Ejercicio 3</button>
-            <button class="btnEj" onclick="ejercicio4()">Ejercicio 4</button>
-            <button class="btnEj" onclick="ejercicio5()">Ejercicio 5</button>
-            <button class="btnEj" onclick="ejercicio6()">Ejercicio 6</button>
-        </aside>
     </main>
+    <aside>
+        <i class="ri-close-line"></i>
+        <button class="btnEj" onclick="ejercicio3()">Ejercicio 3</button>
+        <button class="btnEj" onclick="ejercicio4()">Ejercicio 4</button>
+        <button class="btnEj" onclick="ejercicio5()">Ejercicio 5</button>
+        <button class="btnEj" onclick="ejercicio6()">Ejercicio 6</button>
+    </aside>
 
     <template id="template">
         <li class="mensaje">
