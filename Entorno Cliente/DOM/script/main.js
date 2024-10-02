@@ -2,7 +2,8 @@
 const menu = document.querySelector('aside');
 const cerrar = document.querySelector('aside > i');
 const body = document.querySelector('body');
-const info = document.getElementById('info');
+const infoM = document.getElementById('infoMob');
+const infoG = document.getElementById('infoGen');
 
 if (window.outerWidth < 600){
     let xStart = 0;
@@ -15,9 +16,7 @@ if (window.outerWidth < 600){
 
     body.addEventListener('touchend', (e) =>{
         xEnd = e.changedTouches[0].clientX;
-        const diff = xStart - xEnd;
-        console.log(diff);
-        
+        const diff = xStart - xEnd;        
 
         if(xStart < xEnd && diff * -1 > 80){
             menu.classList.remove('showMenu');
@@ -64,7 +63,8 @@ inputFoto.onchange = () =>{
 }
 
 function ejercicio3(){
-    info.style.display = "none";
+    infoM.style.display = "none";
+    infoG.style.display = "none";
     menu.classList.remove('showMenu');
     ej3.classList.remove('inActivo');
 }
