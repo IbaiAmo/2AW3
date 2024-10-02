@@ -1,7 +1,14 @@
+const body = document.querySelector('body');
+const main = document.querySelector('main');
+const ejercicios = document.querySelectorAll('.ejercicios');
+
+ejercicios.forEach(ejercicio =>{
+    ejercicio.style.display = "none";
+});
+
 //Menu para seleccionar los ejercicios
 const menu = document.querySelector('aside');
 const cerrar = document.querySelector('aside > i');
-const body = document.querySelector('body');
 const infoM = document.getElementById('infoMob');
 const infoG = document.getElementById('infoGen');
 
@@ -62,15 +69,92 @@ inputFoto.onchange = () =>{
     }
 }
 
-function ejercicio3(){
-    infoM.style.display = "none";
-    infoG.style.display = "none";
-    menu.classList.remove('showMenu');
-    ej3.classList.remove('inActivo');
+
+//Ejercicio 5
+const ej5 = document.getElementById('e5');
+const output = document.getElementById('calcOut');
+const clear = document.getElementById('clear');
+const sum = document.getElementById('sum');
+const menos = document.getElementById('menos');
+const mult = document.getElementById('mult');
+const div = document.getElementById('div');
+const igual = document.getElementById('igual');
+const numeros = document.querySelectorAll('.btns');
+
+let operacion = "";
+
+numeros.forEach(num =>{
+    num.onclick = () =>{
+        operacion += num.textContent;
+        output.value += num.textContent;        
+    }
+});
+
+clear.onclick = () =>{
+    operacion = "";
+    output.value = operacion;
+}
+
+sum.onclick = () =>{
+    operacion += "+";
+    output.value += "+";
+}
+
+menos.onclick = () =>{
+    operacion += "-";
+    output.value += "-";
+}
+
+div.onclick = () =>{
+    operacion += "/";
+    output.value += "/";
+}
+
+mult.onclick = () =>{
+    operacion += "*";
+    output.value += "x";
+}
+
+igual.onclick = () =>{
+    if (operacion != ""){        
+        output.value = eval(operacion);
+        operacion = output.value;
+    }
+    
 }
 
 
-//Ejercicio 4
 
+
+
+//funcion para quitar todo lo de la pantalla para luego mostrar el ejercicio.
+function mostrarEjercicio(){
+    infoM.style.display = "none";
+    infoG.style.display = "none";
+    menu.classList.remove('showMenu');
+    ejercicios.forEach(ejercicio =>{
+        ejercicio.style.display = "none";
+    });
+}
+
+function ejercicio3(){
+    mostrarEjercicio();
+    ej3.style.display = "flex";
+}
+
+function ejercicio4(){
+    mostrarEjercicio();
+    ej3.style.display = "flex";
+}
+
+function ejercicio5(){
+    mostrarEjercicio();
+    ej5.style.display = "flex";
+}
+
+function ejercicio6(){
+    mostrarEjercicio();
+    ej3.classList.remove('inActivo');
+}
 
 

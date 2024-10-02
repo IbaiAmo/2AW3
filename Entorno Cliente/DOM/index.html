@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <main>
         <h2 id="infoGen"><i class="ri-information-line"></i> Pulsa un boton para mostrar un ejercicio.</h2>
         <h2 id="infoMob"><i class="ri-information-line"></i> Desliza hacia la izquierda para mostrar un menu con los ejercicios.</h2>
-        <div id="e3" class="inActivo ejercicios">
+        <div id="e3" class="ejercicios">
             <ul id="mensajes">
             </ul>
             <div id="inputs">
@@ -24,6 +24,29 @@
                     <input type="file" id="foto" hidden accept="image/png, image/jpeg" multiple></input>
                 </div>
             </div>
+        </div>
+
+        <div id="e5" class="ejercicios">
+            <input type="text" id="calcOut" readonly>
+            <div class="calcbtns">
+                <button class="btns">7</button>
+                <button class="btns">8</button>
+                <button class="btns">9</button>
+                <button class="op" id="clear">C</button>
+                <button class="btns">4</button>
+                <button class="btns">5</button>
+                <button class="btns">6</button>
+                <button class="op" id="mult">x</button>
+                <button class="btns">1</button>
+                <button class="btns">2</button>
+                <button class="btns">3</button>
+                <button class="op" id="sum">+</button>
+                <button class="btns">0</button>
+                <button class="op" id="menos">-</button>
+                <button class="op" id="div">/</button>
+                <button class="op" id="igual">=</button>
+            </div>
+        </div>
     </main>
     <aside>
         <i class="ri-close-line"></i>
