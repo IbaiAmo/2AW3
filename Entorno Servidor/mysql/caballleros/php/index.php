@@ -28,6 +28,10 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
         </div>
 
         <div class="tableNav">
+            <div>
+                <input type="text" id="buscador" placeholder="Buscar un caballero">
+                <i class="ri-search-line"></i>
+            </div>
             <a class="insertar" href="./insertar.html">
                 <i class="ri-add-line"></i>
                 <p>Crear caballero</p>
@@ -107,7 +111,22 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();        
+        AOS.init();
+        const buscador = document.getElementById('buscador');
+        const celdas = document.querySelectorAll('tbody > tr');
+
+        buscador.addEventListener('input', () =>{
+            celdas.forEach(celda =>{
+                const nombre = celda.childNodes[3].textContent;
+                if(!nombre.toLowerCase().includes(buscador.value.toLowerCase())){
+                    celda.style.display = "none";
+                }else{
+                    celda.style.display = "";
+                }
+                
+            });
+            
+        });
     </script>
 </body>
 </html>
