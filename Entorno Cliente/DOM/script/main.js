@@ -69,6 +69,17 @@ inputFoto.onchange = () =>{
     }
 }
 
+//ejercicio 4
+const ej4 = document.getElementById('e4');
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const copiarBtn = document.querySelector('#e4 > button');
+
+copiarBtn.onclick = () =>{
+    text2.value = text1.value;
+    text1.value = "";
+}
+
 
 //Ejercicio 5
 const ej5 = document.getElementById('e5');
@@ -81,12 +92,15 @@ const div = document.getElementById('div');
 const igual = document.getElementById('igual');
 const numeros = document.querySelectorAll('.btns');
 
+
 let operacion = "";
+let operador = false;
 
 numeros.forEach(num =>{
     num.onclick = () =>{
+        operador = false;
         operacion += num.textContent;
-        output.value += num.textContent;        
+        output.value += num.textContent;              
     }
 });
 
@@ -96,23 +110,35 @@ clear.onclick = () =>{
 }
 
 sum.onclick = () =>{
-    operacion += "+";
-    output.value += "+";
+    if(!operador){
+        operacion += "+";
+        output.value += "+";
+    }
+    operador = true;
 }
 
 menos.onclick = () =>{
-    operacion += "-";
-    output.value += "-";
+    if(!operador){
+        operacion += "-";
+        output.value += "-";
+    }
+    operador = true;
 }
 
 div.onclick = () =>{
-    operacion += "/";
-    output.value += "/";
+    if(!operador){
+        operacion += "/";
+        output.value += "/";
+    }
+    operador = true;
 }
 
 mult.onclick = () =>{
-    operacion += "*";
-    output.value += "x";
+    if(!operador){
+        operacion += "*";
+        output.value += "x";
+    }
+    operador = true;
 }
 
 igual.onclick = () =>{
@@ -123,7 +149,17 @@ igual.onclick = () =>{
     
 }
 
+//Ejercicio 6
+const ej6 = document.getElementById('e6');
+const fecha = document.getElementById('fecha');
+const hora = document.getElementById('hora');
 
+setInterval(() =>{
+    let date = new Date();
+    fecha.innerHTML = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+    hora.innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+     
+}, 1000);
 
 
 
@@ -144,7 +180,7 @@ function ejercicio3(){
 
 function ejercicio4(){
     mostrarEjercicio();
-    ej3.style.display = "flex";
+    ej4.style.display = "flex";
 }
 
 function ejercicio5(){
@@ -154,7 +190,7 @@ function ejercicio5(){
 
 function ejercicio6(){
     mostrarEjercicio();
-    ej3.classList.remove('inActivo');
+    ej6.style.display = "flex";
 }
 
 

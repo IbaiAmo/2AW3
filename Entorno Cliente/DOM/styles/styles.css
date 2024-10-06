@@ -152,6 +152,48 @@ aside{
     align-items: center;
 }
 
+/*ejercicio 4*/
+#e4{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+
+    & .textos{
+        display: flex;
+        gap: 20px;
+
+        & input{
+            all: unset;
+            border: 2px solid;
+            padding: 5px 10px;
+            border-radius: 99999px;
+            transition: ease .3s;
+
+            &:focus{
+                border-color: #224080;
+            }
+        }
+    }
+
+    & button{
+        all: unset;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 99999px;
+        background-color: #224080;
+        transition: ease .3s;
+        color: white;
+        
+        &:hover{
+            background-color: #14213d;
+        }
+    }
+}
+
 /*ejercicio 5*/
 
 #e5{
@@ -202,6 +244,37 @@ aside{
     & .op{
         background-color: #224080;
         color: #ffffff;
+    }
+}
+
+#e6{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    gap: 10px;
+    user-select: none;
+
+    & p{
+        background-color: #222222;
+        padding: 10px 40px;
+        text-align: center;
+        width: 100%;
+    }
+
+    & #fecha{
+        font-size: 20px;
+    }
+
+    & #hora{
+        font-size: 40px;
+    }
+}
+
+@media (width < 750px){
+
+    .textos{
+        flex-direction: column;
     }
 }
 
