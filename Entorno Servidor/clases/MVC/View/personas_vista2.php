@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
-<link rel="icon" href="favicon.ico">
 <title>Nombre y estatura</title>
 </head>
 <body>
