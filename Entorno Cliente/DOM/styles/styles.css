@@ -247,6 +247,21 @@ aside{
     }
 }
 
+#clear{
+    grid-column: 3 / 5;
+}
+
+#cero{
+    grid-column: span 2;
+}
+
+#igual{
+    grid-row: 4/6;
+    grid-column: 4/5;
+}
+
+/*ejercicio 6*/
+
 #e6{
     display: flex;
     flex-direction: column;

@@ -90,6 +90,7 @@ const menos = document.getElementById('menos');
 const mult = document.getElementById('mult');
 const div = document.getElementById('div');
 const igual = document.getElementById('igual');
+const coma = document.getElementById('coma');
 const numeros = document.querySelectorAll('.btns');
 
 
@@ -137,6 +138,14 @@ mult.onclick = () =>{
     if(!operador){
         operacion += "*";
         output.value += "x";
+    }
+    operador = true;
+}
+
+coma.onclick = () =>{
+    if(!operador){
+        operacion += ".";
+        output.value += ".";
     }
     operador = true;
 }
