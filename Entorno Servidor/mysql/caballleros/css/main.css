@@ -61,6 +61,8 @@ main{
         gap: 10px;
         justify-content: space-between;
         margin-top: 40px;
+        box-shadow: 0px 5px 8px #0000007a;
+        z-index: 99999;
         background: url("https://img.freepik.com/foto-gratis/fondo-papel-grunge_1048-10791.jpg?t=st=1727176034~exp=1727179634~hmac=159dae414d6d38fa70805f6bb7b2c59d79b0a01d3aa49f15ebab97e2f0fc067e&w=740");
 
         & .insertar{

@@ -22,7 +22,7 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
 </head>
 <body>
     <main>
-        <div id="title" data-aos="fade-down">
+        <div id="title">
             <h1>Caballeros</h1>
             <img src="https://e7.pngegg.com/pngimages/745/211/png-clipart-paper-text-frame-brown-pattern-medieval-european-border-background-brown-wooden-f-border-texture-thumbnail.png">
         </div>
@@ -38,7 +38,7 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
             </a>
         </div>    
 
-        <div id="tablaCont" data-aos="zoom-in" data-aos-easing="ease-out" data-aos-delay="300">
+        <div id="tablaCont">
         <table>
                 <thead>
                     <tr>
@@ -82,7 +82,7 @@ $resultado = $mysqli->query("SELECT * FROM caballeros");
             </table>
         </div>
 
-        <div id="scroll" data-aos="zoom-in" data-aos-delay="600">
+        <div id="scroll">
             <h2>Scroll para leer</h2>
             <i class="ri-arrow-down-double-line"></i>
         </div>
