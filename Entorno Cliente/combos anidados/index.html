@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/9356/9356230.png">
+    <title>Municipios País Vasco</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body{
+            background-image: url("https://oobrien.com/wordpress/wp-content/uploads/2016/07/googlemaps_july2016.jpg");
+            height: 100dvh;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ejercicio{
+            background-color: #ffffff;
+            max-width: 500px;
+            width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0px 0px 10px #0000008a;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            animation: show forwards .5s ease-out;
+            opacity: 0;
+
+            & div{
+                display: flex;
+                gap: 10px;
+                width: 100%;
+
+                & select{
+                    width: 100%;
+                    font-size: 18px;
+                    border-radius: 8px;
+                    background-color: #ffffff;
+                }
+            }
+
+            & span{
+                font-weight: bold;
+                color: #91a772;
+            }
+        }
+
+        select{
+            padding: 5px 10px;
+        }
+
+        @keyframes show{
+            from{
+                transform: translateY(-100px);
+            }
+
+            to{
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (width < 500px){
+            .ejercicio div{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="ejercicio">
+        <div>
+            <select name="provincia" id="prov">
+                <option value="0">Seleccione provincia</option>
+            </select>
+            <select name="municipio" id="muni">
+                <option value="">Seleccione municipio</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="./muncipios.js"></script>
+</body>
+</html>
