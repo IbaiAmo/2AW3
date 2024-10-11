@@ -5,6 +5,7 @@ use Model\Conexion;
 include_once("vista.php");
 class VArmas extends Vista{
     public function tablaArmas($armas){?>
+    <a href="../controller/formArma.php">Crear arma</a>
     <div class="tabla">
         <table>
             <thead>
@@ -30,4 +31,15 @@ class VArmas extends Vista{
         </table>
     </div>
 <?php }
+
+    public function armaForm(){?>
+    
+        <form action="../controller/crearArma.php" method="post">
+            <input type="number" name="danio" placeholder="Daño">
+            <input type="text" name="tipo" placeholder="Tipo">
+            <input type="submit" value="Crear arma">
+        </form>
+
+<?php
+    }
 }

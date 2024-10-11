@@ -6,8 +6,9 @@
 }
 
 body{
-    background-color: #001b4a;
+    background-color: #b6b1c3;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
@@ -32,4 +33,14 @@ tbody tr:nth-child(odd){
 td{
     padding: 10px 20px;
     text-align: center;
+}
+
+/*Formulario*/
+form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }

@@ -18,5 +18,13 @@ class MArma{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function create($danio, $tipo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("INSERT INTO arma(danio, tipo) VALUES (?, ?)");
+        $sentencia->bind_param("is", $danio, $tipo);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 	
 }
