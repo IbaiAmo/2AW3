@@ -28,4 +28,12 @@ class MEscudo{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function updateEscudo($id, $defensa, $tipo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("UPDATE escudo SET defensa = ?, tipo = ? WHERE id = ?");
+        $sentencia->bind_param("isi", $defensa, $tipo, $id);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }

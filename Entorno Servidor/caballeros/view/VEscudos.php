@@ -21,7 +21,7 @@ class VEscudos extends Vista{
                         <td><?=$escudo['tipo']?></td>
                         <td><div class="acciones">
                             <a href="./deleteEscudo.php?id=<?=$escudo['id']?>">Eliminar</a>
-                            <a href="">Modificar</a>
+                            <a href="./editarEscudo.php?id=<?=$escudo['id']?>">Modificar</a>
                         </div></td>
                     </tr>            
                 <?php }
@@ -38,6 +38,20 @@ class VEscudos extends Vista{
             <input type="number" name="defensa" placeholder="Defensa">
             <input type="text" name="tipo" placeholder="Tipo" autocomplete="off">
             <input type="submit" value="Crear escudo">
+        </form>
+
+        <a href="./listarEscudos.php">Volver</a>
+
+<?php
+    }
+
+    public function escudoUpdateForm($id, $defensa, $tipo){?>
+    
+        <form action="./updateEscudo.php" method="post">
+            <input type="number" name="id" readonly value="<?=$id?>">
+            <input type="number" name="defensa" placeholder="Defensa" value="<?=$defensa?>">
+            <input type="text" name="tipo" placeholder="Tipo" autocomplete="off" value="<?=$tipo?>">
+            <input type="submit" value="Guardar y salir">
         </form>
 
         <a href="./listarEscudos.php">Volver</a>
