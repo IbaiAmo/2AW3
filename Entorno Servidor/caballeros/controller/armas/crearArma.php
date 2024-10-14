@@ -1,5 +1,5 @@
 <?php
-include_once("../model/MArma.php");
+include_once("../../model/MArma.php");
 $danio = $_POST['danio'];
 $tipo = $_POST['tipo'];
 

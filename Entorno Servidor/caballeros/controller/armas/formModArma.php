@@ -1,6 +1,6 @@
 <?php
-include_once("../model/MArma.php");
-include_once("../view/VArmas.php");
+include_once("../../model/MArma.php");
+include_once("../../view/VArmas.php");
 
 $id = $_GET['id'];
 $danio;

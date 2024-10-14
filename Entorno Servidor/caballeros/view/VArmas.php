@@ -5,7 +5,7 @@ use Model\Conexion;
 include_once("vista.php");
 class VArmas extends Vista{
     public function tablaArmas($armas){?>
-    <a href="../controller/formArma.php">Crear arma</a>
+    <a href="./formArma.php">Crear arma</a>
     <div class="tabla">
         <table>
             <thead>
@@ -22,8 +22,8 @@ class VArmas extends Vista{
                     <td><?=$arma['danio']?></td>
                     <td><?=$arma['tipo']?></td>
                     <td><div class="acciones">
-                        <a href="../controller/eliminarArma.php?id=<?=$arma['id']?>">Eliminar</a>
-                        <a href="../controller/formModArma.php?id=<?=$arma['id']?>">Modificar</a>
+                        <a href="./eliminarArma.php?id=<?=$arma['id']?>">Eliminar</a>
+                        <a href="./formModArma.php?id=<?=$arma['id']?>">Modificar</a>
                     </div></td>
                 </tr>            
             <?php }
@@ -35,23 +35,27 @@ class VArmas extends Vista{
 
     public function armaForm(){?>
     
-        <form action="../controller/crearArma.php" method="post">
+        <form action="./crearArma.php" method="post">
             <input type="number" name="danio" placeholder="Daño">
             <input type="text" name="tipo" placeholder="Tipo">
             <input type="submit" value="Crear arma">
         </form>
+
+        <a href="./listarArmas.php">Volver</a>
 
 <?php
     }
 
     public function formEditArma($id, $danio, $tipo){ ?>
 
-        <form action="../controller/modArma.php" method="post">
+        <form action="./modArma.php" method="post">
             <input type="number" readonly name="id" value="<?=$id?>">
             <input type="number" name="danio" placeholder="Daño" value="<?=$danio?>">
             <input type="text" name="tipo" placeholder="Tipo" value="<?=$tipo?>">
-            <input type="submit" value="Editar arma">
+            <input type="submit" value="Guardar y salir">
         </form>
+
+        <a href="./listarArmas.php">Volver</a>
 
 <?php 
     }
