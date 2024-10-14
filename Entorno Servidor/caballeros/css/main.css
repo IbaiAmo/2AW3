@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #b6b1c3;
+    background-color: #eeeeee;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,10 +15,41 @@ body{
     padding-block: 50px;
 }
 
+a{
+    text-decoration: none;
+}
+
 .tabla{
     padding-block: 20px;
     border-radius: 10px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    box-shadow: 0px 0px 10px #0000009a;
+}
+
+.crearBtn{
+    padding: 5px 10px;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    margin-right: 20px;
+}
+
+.eliminar{
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.modificar{
+    color: white;
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 10px;
 }
 
 table{
@@ -43,4 +74,9 @@ form{
     gap: 20px;
     padding: 20px;
     border-radius: 10px;
+}
+
+.acciones{
+    display: flex;
+    gap: 10px;
 }

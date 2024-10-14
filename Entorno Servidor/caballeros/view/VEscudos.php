@@ -3,8 +3,9 @@ include_once("vista.php");
 
 class VEscudos extends Vista{
     public function verEscudos($escudos){ ?>
-        <a href="./formularioEscudo.php">Crear escudo</a>
+        
         <div class="tabla">
+        <a class="crearBtn" href="./formularioEscudo.php">Crear escudo</a>
             <table>
                 <thead>
                     <th>Id</th>
@@ -20,8 +21,8 @@ class VEscudos extends Vista{
                         <td><?=$escudo['defensa']?></td>
                         <td><?=$escudo['tipo']?></td>
                         <td><div class="acciones">
-                            <a href="./deleteEscudo.php?id=<?=$escudo['id']?>">Eliminar</a>
-                            <a href="./editarEscudo.php?id=<?=$escudo['id']?>">Modificar</a>
+                            <a class="eliminar" href="./deleteEscudo.php?id=<?=$escudo['id']?>">Eliminar</a>
+                            <a class="modificar" href="./editarEscudo.php?id=<?=$escudo['id']?>">Modificar</a>
                         </div></td>
                     </tr>            
                 <?php }

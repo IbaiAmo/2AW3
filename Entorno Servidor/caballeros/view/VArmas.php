@@ -5,8 +5,8 @@ use Model\Conexion;
 include_once("vista.php");
 class VArmas extends Vista{
     public function tablaArmas($armas){?>
-    <a href="./formArma.php">Crear arma</a>
     <div class="tabla">
+    <a class="crearBtn" href="./formArma.php">Crear arma</a>
         <table>
             <thead>
                 <th>Id</th>
@@ -22,8 +22,8 @@ class VArmas extends Vista{
                     <td><?=$arma['danio']?></td>
                     <td><?=$arma['tipo']?></td>
                     <td><div class="acciones">
-                        <a href="./eliminarArma.php?id=<?=$arma['id']?>">Eliminar</a>
-                        <a href="./formModArma.php?id=<?=$arma['id']?>">Modificar</a>
+                        <a class="eliminar" href="./eliminarArma.php?id=<?=$arma['id']?>">Eliminar</a>
+                        <a class="modificar" href="./formModArma.php?id=<?=$arma['id']?>">Modificar</a>
                     </div></td>
                 </tr>            
             <?php }
