@@ -20,7 +20,7 @@ class VEscudos extends Vista{
                         <td><?=$escudo['defensa']?></td>
                         <td><?=$escudo['tipo']?></td>
                         <td><div class="acciones">
-                            <a href="">Eliminar</a>
+                            <a href="./deleteEscudo.php?id=<?=$escudo['id']?>">Eliminar</a>
                             <a href="">Modificar</a>
                         </div></td>
                     </tr>            

@@ -12,4 +12,12 @@ class MEscudo{
         
         return $escudos;
     }
+
+    public static function deleteEscudo($id){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("DELETE FROM escudo WHERE id = ?");
+        $sentencia->bind_param("i", $id);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
