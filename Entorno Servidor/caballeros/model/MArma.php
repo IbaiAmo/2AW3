@@ -26,5 +26,13 @@ class MArma{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function edit($id, $danio, $tipo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("UPDATE arma SET danio= ?,tipo = ? WHERE id = ?");
+        $sentencia->bind_param("isi", $danio, $tipo, $id);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 	
 }

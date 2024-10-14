@@ -23,6 +23,7 @@ class VArmas extends Vista{
                     <td><?=$arma['tipo']?></td>
                     <td><div class="acciones">
                         <a href="../controller/eliminarArma.php?id=<?=$arma['id']?>">Eliminar</a>
+                        <a href="../controller/formModArma.php?id=<?=$arma['id']?>">Modificar</a>
                     </div></td>
                 </tr>            
             <?php }
@@ -41,5 +42,17 @@ class VArmas extends Vista{
         </form>
 
 <?php
+    }
+
+    public function formEditArma($id, $danio, $tipo){ ?>
+
+        <form action="../controller/modArma.php" method="post">
+            <input type="number" readonly name="id" value="<?=$id?>">
+            <input type="number" name="danio" placeholder="Daño" value="<?=$danio?>">
+            <input type="text" name="tipo" placeholder="Tipo" value="<?=$tipo?>">
+            <input type="submit" value="Editar arma">
+        </form>
+
+<?php 
     }
 }
