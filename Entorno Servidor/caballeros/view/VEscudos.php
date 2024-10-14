@@ -3,7 +3,7 @@ include_once("vista.php");
 
 class VEscudos extends Vista{
     public function verEscudos($escudos){ ?>
-        <a href="">Crear escudo</a>
+        <a href="./formularioEscudo.php">Crear escudo</a>
         <div class="tabla">
             <table>
                 <thead>
@@ -30,5 +30,18 @@ class VEscudos extends Vista{
             </table>
         </div>
     <?php
+    }
+
+    public function escudoForm(){?>
+    
+        <form action="./insertEscudo.php" method="post">
+            <input type="number" name="defensa" placeholder="Defensa">
+            <input type="text" name="tipo" placeholder="Tipo" autocomplete="off">
+            <input type="submit" value="Crear escudo">
+        </form>
+
+        <a href="./listarEscudos.php">Volver</a>
+
+<?php
     }
 }

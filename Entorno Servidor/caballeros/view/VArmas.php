@@ -37,7 +37,7 @@ class VArmas extends Vista{
     
         <form action="./crearArma.php" method="post">
             <input type="number" name="danio" placeholder="Daño">
-            <input type="text" name="tipo" placeholder="Tipo">
+            <input type="text" name="tipo" autocomplete="off" placeholder="Tipo">
             <input type="submit" value="Crear arma">
         </form>
 
@@ -51,7 +51,7 @@ class VArmas extends Vista{
         <form action="./modArma.php" method="post">
             <input type="number" readonly name="id" value="<?=$id?>">
             <input type="number" name="danio" placeholder="Daño" value="<?=$danio?>">
-            <input type="text" name="tipo" placeholder="Tipo" value="<?=$tipo?>">
+            <input type="text" name="tipo" autocomplete="off" placeholder="Tipo" value="<?=$tipo?>">
             <input type="submit" value="Guardar y salir">
         </form>
 

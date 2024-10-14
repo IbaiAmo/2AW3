@@ -20,4 +20,12 @@ class MEscudo{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function insertEscudo($defensa, $tipo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("INSERT INTO escudo (defensa, tipo) VALUES (?, ?)");
+        $sentencia->bind_param("is", $defensa, $tipo);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
