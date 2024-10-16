@@ -1,0 +1,88 @@
+@font-face{
+    font-family: "twitter";
+    src: url("../fonts/PICOBL__.TTF");
+}
+
+:root{
+    --text: #000;
+    --azulTwitter: #00acee;
+    --azulHover: #008bc2;
+    --border: #e7ecf0;
+    --background: #ffffff;
+}
+
+body{
+    position: relative;
+}
+
+#home{
+    width: 100%;
+    border-bottom: 3px solid var(--border);
+    padding: 10px;
+}
+
+#tweettear{
+    position: fixed;
+    z-index: 99999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background);
+    max-width: 600px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    animation: crearTweet .4s ease normal;
+}
+
+.cerrarTweet{
+    display: flex;
+    border-bottom: 2px solid var(--border);
+    padding: 10px;
+    color: var(--azulTwitter);
+
+    & i{
+        cursor: pointer;
+    }
+}
+
+
+.fondoNegro{
+    width: 100%;
+    height: 100vh;
+    background-color: #0000008a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: fondoNegro .3s ease normal;
+}
+
+@media (width < 650px){
+    #home{
+        font-size: 14px;
+        padding-left: 20px;
+    }
+}
+
+
+
+@keyframes fondoNegro{
+    from{
+        opacity: 0%;
+    }
+
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes crearTweet{
+    from{
+        opacity: 0%;
+    }
+
+    to{
+        opacity: 100%;
+    }
+}

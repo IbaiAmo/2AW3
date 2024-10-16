@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" href="./img/logo.png">
+    <title>Twitter - Comparte tus opiniones</title>
+</head>
+<body>
+    
+    <aside id="menu">
+        <div class="title">
+            <img class="icon" id="logoMenu" src="./img/logo.png">Twitter
+        </div>
+        <div class="menuDesplegable">
+            <a href="index.html"><i class="ri-home-2-line icon"></i><p>Inicio</p></a>
+            <a href=""><i class="ri-hashtag icon"></i><p>Explorar</p></a>
+            <a href=""><i class="ri-notification-2-line icon"></i><p>Notificaciones</p></a>
+            <a href=""><i class="ri-chat-1-line icon"></i><p>Mensajes</p></a>
+            <a href=""><i class="ri-bookmark-line icon"></i><p>Marcadores</p></a>
+            <a href=""><i class="ri-file-list-2-line icon"></i><p>Listas</p></a>
+            <a href=""><img class="icon" src="./img/user.png"><p>Perfil</p></a>
+            <i class="ri-close-line icon" id="btnClose"></i>
+        </div>
+
+        <button id="btnTweet">Tweet</button>
+
+        <i class="ri-menu-2-line icon" id="btnMenu"></i>
+    </aside>
+
+    <main>
+        <div id="home">
+            <h1>Home</h1>
+        </div>
+
+        <div id="tweets">
+
+        </div>
+    </main>
+    
+    <template id="template">
+        <div id="tweettear">
+            <div class="cerrarTweet">
+                <i class="ri-close-line icon" id="closeTweet"></i>
+            </div>
+            <div class="escribir"></div>
+            <div class="opcionesTweet"></div>
+        </div>
+    </template>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/tweet.js"></script>
+</body>
+</html>
