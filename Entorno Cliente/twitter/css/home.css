@@ -47,6 +47,97 @@ body{
     }
 }
 
+.escribir{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid var(--border);
+
+    & img{
+        width: 50%;
+        align-self: center;
+    }
+}
+
+#textoInput{
+    all: unset;
+    width: 100%;
+    color: #000;
+    height: 100px;
+    font-size: 18px;
+    scrollbar-width: thin;
+}
+
+.opcionesTweet{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+
+    & div{
+        display: flex;
+        gap: 20px;
+
+        & .icon{
+            font-size: 25px;
+            color: var(--azulTwitter);
+            cursor: pointer;
+            transition: ease .2s;
+
+            &:hover{
+                color: var(--azulHover);
+            }
+        }
+    }
+
+
+    & button{
+        all: unset;
+        background-color: var(--azulTwitter);
+        color: white;
+        padding: 10px 30px;
+        transition: ease .3s;
+        border-radius: 99999px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var(--azulHover);
+        }
+    }
+}
+
+.fotoSubida{
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    & i{
+        display: none;
+    }
+
+    &:hover{
+        & .borrarFoto{
+            background-color: #0000009a;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 100%;
+    
+            & i{
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
 
 .fondoNegro{
     width: 100%;
@@ -62,6 +153,18 @@ body{
     #home{
         font-size: 14px;
         padding-left: 20px;
+    }
+
+    .escribir > img{
+        width: 70%;
+    }
+}
+
+@media (width < 450px){
+    .opcionesTweet{
+        & div{
+            gap: 5px;
+        }
     }
 }
 

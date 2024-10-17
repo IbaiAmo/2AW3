@@ -46,8 +46,27 @@
             <div class="cerrarTweet">
                 <i class="ri-close-line icon" id="closeTweet"></i>
             </div>
-            <div class="escribir"></div>
-            <div class="opcionesTweet"></div>
+            <div class="escribir">
+                <textarea name="texto" id="textoInput" maxlength="250" placeholder="¿Qué está pasando?"></textarea>
+                <div class="fotoSubida">
+                    <img src="">
+                    <div class="borrarFoto">
+                        <i class="ri-close-line icon" id="borrarFotoBtn"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="opcionesTweet">
+                <div>
+                    <label for="fotoInput"><i class="ri-image-line icon"></i></label>
+                    <input type="file" hidden id="fotoInput" accept="image/png, image/jpeg">
+                    <i class="ri-file-gif-line icon"></i>
+                    <i class="ri-bar-chart-horizontal-fill icon"></i>
+                    <i class="ri-emoji-sticker-line icon"></i>
+                    <i class="ri-calendar-schedule-line icon"></i>
+                </div>
+
+                <button id="crearTweetBtn">Twittear</button>
+            </div>
         </div>
     </template>
     <script src="./scripts/main.js"></script>

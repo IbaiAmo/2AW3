@@ -14,6 +14,10 @@ $btnTweet.onclick = () =>{
     const clon = $template.content.cloneNode(true);
     const $tweetear = clon.getElementById('tweettear');
     const $closeTweet = clon.getElementById('closeTweet');
+    const $panelInputs = clon.querySelector('.escribir');
+    const $fotoInput = clon.getElementById('fotoInput');
+    const $foto = clon.querySelector('.escribir img');
+    const $borrarFoto = clon.getElementById('borrarFotoBtn');
 
     $body2.appendChild($tweetear);
 
@@ -21,6 +25,18 @@ $btnTweet.onclick = () =>{
         $body2.removeChild(fondo);
         $body2.removeChild($tweetear);
     });
+
+    $fotoInput.onchange = (e) =>{
+        const blob = URL.createObjectURL($fotoInput.files[0]);
+        $foto.src = blob;
+
+        
+    }
+
+    $borrarFoto.addEventListener('click', () =>{
+        $foto.src = "";
+    });
+
 }
 
 
