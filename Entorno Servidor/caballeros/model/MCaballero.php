@@ -1,0 +1,22 @@
+<?php
+include_once("Db.php");
+class MCaballero{
+    public static function getCaballeros(){
+        $conexion = Conectar::conexion();
+        $caballeros = array();
+        $sentencia = $conexion->query("SELECT * FROM caballero");
+        while($filas = $sentencia->fetch_assoc()){
+            $caballeros[] = $filas;
+        }
+
+        return $caballeros;
+    }
+
+    public static function delete($id){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("DELETE FROM caballero WHERE id= ?");
+        $sentencia->bind_param("i", $id);
+        $sentencia->execute();
+        $sentencia->close();
+    }
+}
