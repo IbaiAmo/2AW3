@@ -38,6 +38,7 @@ class VCaballeros extends Vista{
                 </tbody>
             </table>
         </div>
+        <a href="../../index.php">Volver</a>
     <?php
     }
 

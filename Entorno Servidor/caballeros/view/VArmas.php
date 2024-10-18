@@ -31,6 +31,7 @@ class VArmas extends Vista{
             </tbody>
         </table>
     </div>
+    <a href="../../index.php">Volver</a>
 <?php }
 
     public function armaForm(){?>
