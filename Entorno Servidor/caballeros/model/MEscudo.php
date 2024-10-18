@@ -13,6 +13,18 @@ class MEscudo{
         return $escudos;
     }
 
+    public static function tipoEscudo($id){
+        $conexion = Conectar::conexion();
+        $tipo = $conexion->query("SELECT tipo FROM escudo INNER JOIN caballero on caballero.id_escudo = escudo.id WHERE caballero.id = $id");
+        $tipo = $tipo->fetch_assoc();
+
+        if(isset($tipo["tipo"])){
+            return $tipo["tipo"];
+        }else{
+            return "Sin asignar";
+        }
+    }
+
     public static function deleteEscudo($id){
         $conexion = Conectar::conexion();
         $sentencia = $conexion->prepare("DELETE FROM escudo WHERE id = ?");

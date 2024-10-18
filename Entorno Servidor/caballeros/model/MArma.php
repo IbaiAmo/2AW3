@@ -11,6 +11,18 @@ class MArma{
         return $armas;
     }
 
+    public static function tipoArma($id){
+        $conexion = Conectar::conexion();
+        $tipo = $conexion->query("SELECT tipo FROM arma INNER JOIN caballero on caballero.id_arma = arma.id WHERE caballero.id = $id");
+        $tipo = $tipo->fetch_assoc();
+
+        if(isset($tipo["tipo"])){
+            return $tipo["tipo"];
+        }else{
+            return "Sin asignar";
+        }      
+    }
+
     public static function eliminar($id){
         $conexion = Conectar::conexion();
         $sentencia = $conexion->prepare("DELETE FROM arma WHERE id= ?");

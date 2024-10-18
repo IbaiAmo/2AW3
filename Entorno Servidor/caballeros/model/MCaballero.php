@@ -19,4 +19,12 @@ class MCaballero{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function update($id, $nombre, $fuerza, $nivel, $idArma, $idEscudo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("UPDATE caballero SET nombre = ? ,fuerza = ? ,nivel = ? ,id_arma = ? ,id_escudo = ? WHERE id = ?");
+        $sentencia->bind_param("siiiii", $nombre, $fuerza, $nivel, $idArma, $idEscudo, $id);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
