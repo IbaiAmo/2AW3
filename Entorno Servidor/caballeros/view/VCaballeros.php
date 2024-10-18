@@ -47,7 +47,7 @@ class VCaballeros extends Vista{
 
             <input type="number" readonly name="id" value="<?=$id?>">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?=$nombre?>" required>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" value="<?=$nombre?>" autocomplete="off" required>
             <label for="nombre">Fuerza</label>
             <input type="number" name="fuerza" id="fuerza" placeholder="Fuerza" value="<?=$fuerza?>" required>
             <label for="nombre">Nivel</label>
@@ -106,6 +106,44 @@ class VCaballeros extends Vista{
             
             
         </script>
+    <?php
+    }
+
+    public function formCaballero($armas, $escudos){?>
+        
+        <form action="insertCaballero.php" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" autocomplete="off" required>
+            <label for="nombre">Fuerza</label>
+            <input type="number" name="fuerza" id="fuerza" placeholder="Fuerza" required>
+            <label for="nombre">Nivel</label>
+            <input type="number" name="nivel" id="nivel" placeholder="Nivel" required>
+            
+            <label>Arma</label>
+            <select name="arma" id="armaSelect">
+                <option value="Sin asignar">Sin asignar</option>
+                <?php
+                    foreach($armas as $arma){?>
+                        <option value="<?=$arma['id']?>"><?=$arma['id'] . " - " . $arma['tipo']?></option>
+                    <?php
+                    }
+                ?>
+            </select>
+
+            <label>Escudo</label>
+            <select name="escudo" id="escudoSelect">
+                <option value="Sin asignar">Sin asignar</option>
+                <?php
+                    foreach($escudos as $escudo){?>
+                        <option value="<?=$escudo['id']?>"><?=$escudo['id'] . " - " . $escudo['tipo']?></option>
+                    <?php
+                    }
+                ?>
+            </select>
+            <input type="submit" value="Guardar">
+        </form>
+        <a href="./listarCaballeros.php">Volver</a>
+
     <?php
     }
 }

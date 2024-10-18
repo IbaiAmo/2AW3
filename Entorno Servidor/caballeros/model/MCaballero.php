@@ -27,4 +27,12 @@ class MCaballero{
         $sentencia->execute();
         $sentencia->close();
     }
+
+    public static function insert($nombre, $fuerza, $nivel, $idArma, $idEscudo){
+        $conexion = Conectar::conexion();
+        $sentencia = $conexion->prepare("INSERT INTO caballero(nombre, fuerza, nivel, id_arma, id_escudo) VALUES (?, ?, ?, ?, ?)");
+        $sentencia->bind_param("siiii", $nombre, $fuerza, $nivel, $idArma, $idEscudo);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
