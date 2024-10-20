@@ -9,10 +9,16 @@
     --azulHover: #008bc2;
     --border: #e7ecf0;
     --background: #ffffff;
+    --letraSec: #8e8e8e;
 }
 
 body{
     position: relative;
+    z-index: -9999999999999999999999;
+}
+
+main{
+    z-index: -9999999999;
 }
 
 #home{
@@ -139,14 +145,85 @@ body{
     }
 }
 
-.fondoNegro{
+.searchTwitter{
+    min-height: 100vh;
+    border-left: 3px solid var(--border);
+    min-width: 300px;
+}
+
+#tweets{
+    z-index: -99999;
+    padding-bottom: 100px;
+}
+
+.tweet{
     width: 100%;
-    height: 100vh;
-    background-color: #0000008a;
-    position: fixed;
-    top: 0;
-    left: 0;
-    animation: fondoNegro .3s ease normal;
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid var(--border);
+    animation: showTweet 1s ease normal;
+    z-index: -99;
+}
+
+#fotoUser{
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    object-fit: cover;
+}
+
+
+.tweetData{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.secundario{
+    color: var(--letraSec);
+    
+}
+
+.puntoSep{
+    font-size: 14px;
+}
+
+#fotoTweet{
+    max-width: 100%;
+    width: auto;
+    max-height: 400px;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.tweetOptions{
+    display: flex;
+    margin-top: 15px;
+    gap: 80px;
+    font-size: 18px;
+    
+    & i{
+        cursor: pointer;
+        color: var(--letraSec);
+    }
+}
+
+@media (width < 1000px){
+    .searchTwitter{
+        display: none;
+    }
+
+    .tweetOptions{
+        gap: 70px;
+    }
+
+    #fotoUser{
+        width: 50px;
+        height: 50px;
+    }
 }
 
 @media (width < 650px){
@@ -158,6 +235,13 @@ body{
     .escribir > img{
         width: 70%;
     }
+
+    #fotoUser{
+        width: 50px;
+        height: 50px;
+    }
+
+
 }
 
 @media (width < 450px){
@@ -166,11 +250,27 @@ body{
             gap: 5px;
         }
     }
+
+    .tweet{
+        flex-direction: column;
+        position: relative;
+    }
+
+    .tweetData{
+        font-size: 17px;
+        position: absolute;
+        top: calc(55px/2);
+        left: 80px;
+    }
+
+    .tweetOptions{
+        gap: 0;
+        justify-content: space-between;
+    }
+
 }
 
-
-
-@keyframes fondoNegro{
+@keyframes showTweet{
     from{
         opacity: 0%;
     }
@@ -179,6 +279,8 @@ body{
         opacity: 100%;
     }
 }
+
+
 
 @keyframes crearTweet{
     from{

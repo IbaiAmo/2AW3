@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Roboto";
+    user-select: none;
+}
+
+:root{
+    --text: #000;
+    --azulTwitter: #00acee;
+    --azulHover: #008bc2;
+    --border: #e7ecf0;
+    --background: #ffffff;
+    --letraSec: #8e8e8e;
+}
+
+body{
+    height: 100dvh;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+#title{
+    font-size: 50px;
+    width: fit-content;
+}
+
+.registrarse, .iniciarSesion{
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+
+    & img{
+        width: 50px;
+    }
+
+    & p{
+        margin-top: 20px;
+
+        & span{
+            color: var(--azulTwitter);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+#formReg, #formIni{
+    width: 100%;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+
+    & h2{
+        font-size: 30px;
+    }
+
+    & input{
+        all: unset;
+        width: 100%;
+        font-size: 18px;
+        padding: 5px;
+        border: 2px solid;
+        border-radius: 5px;
+        border-color: var(--letraSec);
+        transition: ease .2s;
+        margin-top: 20px;
+
+        &::placeholder{
+            color: var(--letraSec);
+        }
+
+        &:focus{
+            border-color: var(--azulHover);
+        }
+    }
+
+    & input[type="submit"]{
+        all: unset;
+        background-color: var(--azulTwitter);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 99999px;
+        cursor: pointer;
+        transition: ease .3s;
+        font-weight: bold;
+        margin-top: 40px;
+
+        &:hover{
+            background-color: var(--azulHover);
+        }
+    }
+}
+
+.activo{
+    display: flex;
+}
+
+@media (width < 1000px){
+    #title{
+        font-size: 35px;
+    }
+}
+
+@media (width < 900px){
+    #title{
+        display: none;
+    }
+}
+
+@media (width < 500px){
+    #registrarse{
+        height: 100%;
+        justify-content: center;
+        gap: 40px;
+    }
+}

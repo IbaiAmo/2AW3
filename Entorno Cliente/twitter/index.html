@@ -3,73 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="icon" href="./img/logo.png">
-    <title>Twitter - Comparte tus opiniones</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="./css/sesion.css">
+    <title>Inicia sesión en Twitter</title>
 </head>
 <body>
-    
-    <aside id="menu">
-        <div class="title">
-            <img class="icon" id="logoMenu" src="./img/logo.png">Twitter
-        </div>
-        <div class="menuDesplegable">
-            <a href="index.html"><i class="ri-home-2-line icon"></i><p>Inicio</p></a>
-            <a href=""><i class="ri-hashtag icon"></i><p>Explorar</p></a>
-            <a href=""><i class="ri-notification-2-line icon"></i><p>Notificaciones</p></a>
-            <a href=""><i class="ri-chat-1-line icon"></i><p>Mensajes</p></a>
-            <a href=""><i class="ri-bookmark-line icon"></i><p>Marcadores</p></a>
-            <a href=""><i class="ri-file-list-2-line icon"></i><p>Listas</p></a>
-            <a href=""><img class="icon" src="./img/user.png"><p>Perfil</p></a>
-            <i class="ri-close-line icon" id="btnClose"></i>
-        </div>
-
-        <button id="btnTweet">Tweet</button>
-
-        <i class="ri-menu-2-line icon" id="btnMenu"></i>
-    </aside>
-
     <main>
-        <div id="home">
-            <h1>Home</h1>
-        </div>
+        <h1 id="title">Lo que está<br>pasando ahora</h1>
+        <section class="registrarse activo">
+            <img src="./img/logo.png">
+            
+            <form id="formReg">
+                <h2>Crea tu cuenta</h2>
 
-        <div id="tweets">
+                <input type="text" id="nombreR" placeholder="Nombre" required autocomplete="off">
+                <input type="text" id="usuarioR" placeholder="@Usuario" required autocomplete="off">
+                <input type="password" id="passwR" placeholder="Contraseña" required autocomplete="off">
 
-        </div>
+                <input type="submit" value="Crear cuenta">
+            </form>
+            <p>¿Ya tienes cuenta? <span id="cambiarIni">Inicia sesión</span></p>
+        </section>
+
+        <section class="iniciarSesion">
+            <img src="./img/logo.png">
+            
+            <form id="formIni">
+                <h2>Crea tu cuenta</h2>
+
+                <input type="text" id="usuarioI" placeholder="@Usuario" required autocomplete="off">
+                <input type="password" id="passwI" placeholder="Contraseña" required autocomplete="off">
+
+                <input type="submit" value="Iniciar sesión">
+            </form>
+            <p>¿No tienes cuenta? <span id="cambiarReg">Registrarse</span></p>
+        </section>
     </main>
-    
-    <template id="template">
-        <div id="tweettear">
-            <div class="cerrarTweet">
-                <i class="ri-close-line icon" id="closeTweet"></i>
-            </div>
-            <div class="escribir">
-                <textarea name="texto" id="textoInput" maxlength="250" placeholder="¿Qué está pasando?"></textarea>
-                <div class="fotoSubida">
-                    <img src="">
-                    <div class="borrarFoto">
-                        <i class="ri-close-line icon" id="borrarFotoBtn"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="opcionesTweet">
-                <div>
-                    <label for="fotoInput"><i class="ri-image-line icon"></i></label>
-                    <input type="file" hidden id="fotoInput" accept="image/png, image/jpeg">
-                    <i class="ri-file-gif-line icon"></i>
-                    <i class="ri-bar-chart-horizontal-fill icon"></i>
-                    <i class="ri-emoji-sticker-line icon"></i>
-                    <i class="ri-calendar-schedule-line icon"></i>
-                </div>
 
-                <button id="crearTweetBtn">Twittear</button>
-            </div>
-        </div>
-    </template>
-    <script src="./scripts/main.js"></script>
-    <script src="./scripts/tweet.js"></script>
+    <script src="./scripts/registro.js"></script>
 </body>
 </html>
