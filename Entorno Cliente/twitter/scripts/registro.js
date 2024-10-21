@@ -1,10 +1,11 @@
 const is_Signed = sessionStorage.getItem('is_Signed');
+
 if(is_Signed){
     location.href = 'inicio.html';
 }
 
-// localStorage.clear()
-// sessionStorage.clear()
+// localStorage.clear();
+// sessionStorage.clear();
 
 const usuarios = Array();
 const userLocal = JSON.parse(localStorage.getItem("usuarios"));
@@ -75,4 +76,28 @@ $formRegistro.addEventListener('submit', (e) =>{
     }
 
 
+});
+
+//Iniciar sesion
+const $formInicio = document.getElementById('formIni');
+const usuarioInicio = document.getElementById('usuarioI');
+const passInicio = document.getElementById('passwI');
+
+$formInicio.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    let encontrado = false;
+    for(let i = 0; i < usuarios.length; i++){
+        if(usuarioInicio.value == usuarios[i].usuario && passInicio.value == usuarios[i].password){
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (encontrado){
+        sessionStorage.setItem("is_Signed", true);
+        sessionStorage.setItem("signedUser", usuarioInicio.value);
+        location.href = 'inicio.html';
+    }else{
+        alert('Ese usuario no existe');
+    }
 });
