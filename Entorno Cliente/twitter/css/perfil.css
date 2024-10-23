@@ -1,0 +1,50 @@
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 100px;
+
+    & input{
+        all: unset;
+        border: 2px solid var(--letraSec);
+        padding: 5px;
+        border-radius: 5px;
+        transition: ease .2s;
+
+        &:focus{
+            border-color: var(--azulHover);
+        }
+    }
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 400px;
+    color: var(--letraSec);
+    
+    & label{
+        font-weight: bold;
+    }
+}
+
+#btnGuardar{
+    all: unset;
+    align-self: center;
+    padding: 10px 20px;
+    border-radius: 99999px;
+    cursor: pointer;
+    background-color: var(--azulTwitter);
+    color: white;
+    transition: ease .3s;
+
+    &:hover{
+        background-color: var(--azulHover);
+    }
+}

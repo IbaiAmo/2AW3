@@ -6,9 +6,6 @@ const $template2 = document.getElementById('template');
 // localStorage.clear();
 
 
-
-
-
 const usuariosArray = JSON.parse(localStorage.getItem("usuarios"));
 const arrayLocal = JSON.parse(localStorage.getItem("tweets"));
 
