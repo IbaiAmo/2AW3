@@ -96,6 +96,14 @@ a{
     font-size: 36px;
 }
 
+#fotoPerfil{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-position: center;
+}
+
 #btnTweet{
     all: unset;
     background-color: var(--azulTwitter);
@@ -151,6 +159,11 @@ main{
     .icon{
         width: 28px;
         font-size: 28px;
+    }
+
+    #fotoPerfil{
+        width: 28px;
+        height: 28px;
     }
 }
 
