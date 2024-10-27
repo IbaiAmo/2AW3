@@ -109,6 +109,18 @@ main{
     }
 }
 
+.modal{
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0px 0px 10px #0000006a;
+    animation: modal 4.5s ease-out forwards;
+}
+
 @media (width < 950px){
     .datos{
         flex-direction: column;
@@ -150,5 +162,29 @@ main{
         & label{
             padding: 5px 10px;
         }
+    }
+
+    .modal{
+        font-size: 14px;
+        right: 10px;
+    }
+}
+
+
+@keyframes modal{
+    0%{
+        transform: translateY(100px);
+    }
+
+    20%{
+        transform: translateY(0);
+    }
+
+    80%{
+        transform: translateY(0);
+    }
+
+    100%{
+        transform: translateY(100px);
     }
 }

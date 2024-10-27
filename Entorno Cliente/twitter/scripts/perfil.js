@@ -6,6 +6,7 @@ const $usuario = document.getElementById('usuario');
 const $passwd = document.getElementById('passwd');
 const $profilePic = document.getElementById('profilePic');
 const $changePicBtn = document.getElementById('picChange');
+const body = document.querySelector('body');
 
 const usuariosArray2 = JSON.parse(localStorage.getItem("usuarios"));
 const usuarios = Array();
@@ -66,45 +67,47 @@ GuardarCambios.addEventListener('click', () =>{
     }
 
     localStorage.setItem("tweets", JSON.stringify(tweets));
+    modal('<i class="ri-check-line"></i> Se han cambiado los datos personales');
     
 });
 
 
 $changePicBtn.addEventListener('change', () =>{
 
-      var fileReader = new FileReader();
+    var fileReader = new FileReader();
 
-      fileReader.onload = function(fileLoadedEvent) {
-        var srcData = fileLoadedEvent.target.result; // <--- data: base64
-        $profilePic.src = srcData;
-        fotoDePerf.src = srcData;
+    fileReader.onload = function(fileLoadedEvent) {
+    var srcData = fileLoadedEvent.target.result; // <--- data: base64
+    $profilePic.src = srcData;
+    fotoDePerf.src = srcData;
 
-        //cambiar datos en el array de usuarios
-        for (let i = 0; i < usuarios.length; i++){
-            if (usuarios[i].usuario == sessionStorage.getItem("signedUser")){
-                usuarios[i].fotoPerfil = $profilePic.src;
+    //cambiar datos en el array de usuarios
+    for (let i = 0; i < usuarios.length; i++){
+        if (usuarios[i].usuario == sessionStorage.getItem("signedUser")){
+            usuarios[i].fotoPerfil = $profilePic.src;
 
-                tweetsIdUser = usuarios[i].tweets;
-                
-                localStorage.setItem("usuarios", JSON.stringify(usuarios));
-                break;
+            tweetsIdUser = usuarios[i].tweets;
+            
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            break;
+        }
+    }
+
+    //cambiar datos en los tweets del usuario
+    for (let x = 0; x < tweets.length; x++){
+        for (let k = 0; k < tweetsIdUser.length; k++){
+            if (tweets[x].ID == tweetsIdUser[k]){
+                tweets[x].IMG = $profilePic.src;                
             }
         }
+    }
 
-        //cambiar datos en los tweets del usuario
-        for (let x = 0; x < tweets.length; x++){
-            for (let k = 0; k < tweetsIdUser.length; k++){
-                if (tweets[x].ID == tweetsIdUser[k]){
-                    tweets[x].IMG = $profilePic.src;                
-                }
-            }
-        }
+    localStorage.setItem("tweets", JSON.stringify(tweets));
+    }
 
-        localStorage.setItem("tweets", JSON.stringify(tweets));
-      }
-      fileReader.readAsDataURL($changePicBtn.files[0]);  
+    fileReader.readAsDataURL($changePicBtn.files[0]);  
 
-    
+    modal('<i class="ri-check-line"></i> Se ha cambiado la foto de perfil');
 });
 
 
@@ -138,4 +141,19 @@ function getUserPasswd(){
             return usuariosArray2[x].password;
         } 
     }
+}
+
+function modal(texto){
+    const modal = document.createElement('div');
+    const mensaje = document.createElement('p');
+
+    modal.classList.add('modal');
+    mensaje.innerHTML = texto;
+
+    modal.appendChild(mensaje);
+    body.appendChild(modal);
+
+    setTimeout(() =>{
+        body.removeChild(modal);
+    }, 4500);
 }

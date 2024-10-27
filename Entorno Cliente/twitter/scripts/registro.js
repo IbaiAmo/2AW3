@@ -21,7 +21,6 @@ const registro = document.querySelector('.registrarse');
 const iniciarSesion = document.querySelector('.iniciarSesion');
 
 
-
 //cambio de paneles
 const cambiarSection1 = document.getElementById('cambiarIni');
 const cambiarSection2 = document.getElementById('cambiarReg');
@@ -38,15 +37,47 @@ cambiarSection2.addEventListener('click', () =>{
 });
 
 //registro
-const $formRegistro = document.getElementById('formReg');
+const $formRegistro = document.querySelector('.formReg');
 const nombreRegistro = document.getElementById('nombreR');
 const usuarioRegistro = document.getElementById('usuarioR');
 const passRegistro = document.getElementById('passwR');
+const errorNombre = document.getElementById('errorNombre');
+const errorUsuario = document.getElementById('errorUsuario');
 
+let nombreBien, usuarioBien;
+
+nombreRegistro.addEventListener('blur', () =>{
+    if (/[^a-zA-Z\s]/.test(nombreRegistro.value) || nombreRegistro.value.length > 15){
+        nombreRegistro.classList.add('error');
+        nombreBien = false;
+        errorNombre.style.display = "block";
+        errorNombre.textContent = "No se pueden introducir números ni caracteres especiales";
+    }else{
+        nombreRegistro.classList.remove('error');
+        nombreBien = true;
+        errorNombre.style.display = "none";
+    }
+});
+
+usuarioRegistro.addEventListener('blur', () =>{
+    if (/[@\s]/.test(usuarioRegistro.value) || usuarioRegistro.value.length > 15){
+        usuarioRegistro.classList.add('error');
+        usuarioBien = false;
+        errorUsuario.style.display = "block";
+        errorUsuario.textContent = "No puede tener espacios ni @";
+    }else{
+        usuarioRegistro.classList.remove('error');
+        usuarioBien = true;
+        errorUsuario.style.display = "none";
+    }
+});
 
 $formRegistro.addEventListener('submit', (e) =>{
 
     e.preventDefault();
+
+
+if (nombreBien && usuarioBien){
 
     let userExists = false;
     for(let i = 0; i < usuarios.length; i++){
@@ -74,12 +105,12 @@ $formRegistro.addEventListener('submit', (e) =>{
         sessionStorage.setItem("signedUser", user.usuario);
         location.href = 'inicio.html';
     }
-
+}
 
 });
 
 //Iniciar sesion
-const $formInicio = document.getElementById('formIni');
+const $formInicio = document.querySelector('.formIni');
 const usuarioInicio = document.getElementById('usuarioI');
 const passInicio = document.getElementById('passwI');
 

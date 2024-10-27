@@ -48,18 +48,35 @@ main{
         width: 50px;
     }
 
-    & p{
-        margin-top: 20px;
+    & span{
+        color: var(--azulTwitter);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+}
 
-        & span{
-            color: var(--azulTwitter);
-            text-decoration: underline;
-            cursor: pointer;
-        }
+.input{
+    all: unset;
+    width: 100%;
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: var(--letraSec);
+    transition: ease .2s;
+    margin-top: 20px;
+
+    &::placeholder{
+        color: var(--letraSec);
+    }
+
+    &:focus{
+        border-color: var(--azulHover);
     }
 }
 
-#formReg, #formIni{
+.formReg, .formIni{
     width: 100%;
     padding-inline: 20px;
     display: flex;
@@ -69,26 +86,6 @@ main{
 
     & h2{
         font-size: 30px;
-    }
-
-    & input{
-        all: unset;
-        width: 100%;
-        font-size: 18px;
-        padding: 5px;
-        border: 2px solid;
-        border-radius: 5px;
-        border-color: var(--letraSec);
-        transition: ease .2s;
-        margin-top: 20px;
-
-        &::placeholder{
-            color: var(--letraSec);
-        }
-
-        &:focus{
-            border-color: var(--azulHover);
-        }
     }
 
     & input[type="submit"]{
@@ -110,6 +107,20 @@ main{
 
 .activo{
     display: flex;
+}
+
+.error{
+    border-color: red;
+
+    &:focus{
+        border-color: red;
+    }
+}
+
+.msgError{
+    color: red;
+    align-self: flex-start;
+    margin-top: 5px;
 }
 
 @media (width < 1000px){

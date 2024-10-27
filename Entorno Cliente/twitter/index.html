@@ -13,12 +13,14 @@
         <section class="registrarse">
             <img src="./img/logo.png">
             
-            <form id="formReg">
+            <form class="formReg">
                 <h2>Crea tu cuenta</h2>
 
-                <input type="text" id="nombreR" placeholder="Nombre" required autocomplete="off">
-                <input type="text" id="usuarioR" placeholder="Usuario" required autocomplete="off">
-                <input type="password" id="passwR" placeholder="Contraseña" required autocomplete="off">
+                <input type="text" class="input" id="nombreR" placeholder="Nombre" required autocomplete="off">
+                <p class="msgError" id="errorNombre" style="display: none;"></p>
+                <input type="text" class="input" id="usuarioR" placeholder="Usuario" required autocomplete="off">
+                <p class="msgError" id="errorUsuario" style="display: none;"></p>                
+                <input type="password" class="input" id="passwR" placeholder="Contraseña" required autocomplete="off">
 
                 <input type="submit" value="Crear cuenta">
             </form>
@@ -28,11 +30,11 @@
         <section class="iniciarSesion activo">
             <img src="./img/logo.png">
             
-            <form id="formIni">
+            <form class="formIni">
                 <h2>Inicia Sesión</h2>
 
-                <input type="text" id="usuarioI" placeholder="Usuario" required autocomplete="off">
-                <input type="password" id="passwI" placeholder="Contraseña" required autocomplete="off">
+                <input type="text" class="input" id="usuarioI" placeholder="Usuario" required autocomplete="off">
+                <input type="password" class="input" id="passwI" placeholder="Contraseña" required autocomplete="off">
 
                 <input type="submit" value="Iniciar sesión">
             </form>
