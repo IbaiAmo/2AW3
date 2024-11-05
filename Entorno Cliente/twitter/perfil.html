@@ -36,15 +36,18 @@
             <div class="personalData">
                 <div class="inputs">
                     <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" autocomplete="off">
+                    <input class="input" type="text" name="nombre" id="nombre" autocomplete="off">
+                    <p class="msgError" id="nombreMsg"></p>
                 </div>
                 <div class="inputs">
                     <label for="usuario">Usuario</label>
-                    <input type="text" name="usuario" id="usuario" autocomplete="off">
+                    <input class="input" type="text" name="usuario" id="usuario" autocomplete="off">
+                    <p class="msgError" id="usuarioMsg"></p>
                 </div>
                 <div class="inputs">
                     <label for="passwd">Contraseña</label>
-                    <input type="text" name="passwd" id="passwd" autocomplete="off">
+                    <input class="input" type="text" name="passwd" id="passwd" autocomplete="off">
+                    <p class="msgError" id="passwdMsg"></p>
                 </div>
                 <button id="btnGuardar">Guardar</button>
             </div>
@@ -55,10 +58,6 @@
                 <input type="file" hidden id="picChange" accept="image/png, image/jpeg">
             </div>
         </section>
-
-        <aside>
-
-        </aside>
     </main>
 
     <script src="./scripts/main.js"></script>

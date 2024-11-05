@@ -38,18 +38,18 @@ main{
     gap: 30px;
     height: fit-content;
     padding: 20px;
+}
 
-    & input{
-        all: unset;
-        border: 2px solid var(--letraSec);
-        padding: 5px;
-        border-radius: 5px;
-        transition: ease .2s;
+.input{
+    all: unset;
+    border: 2px solid var(--letraSec);
+    padding: 5px;
+    border-radius: 5px;
+    transition: ease .2s;
 
-        &:focus{
-            border-color: var(--azulHover);
-            color: black;
-        }
+    &:focus{
+        border-color: var(--azulHover);
+        color: black;
     }
 }
 
@@ -119,6 +119,20 @@ main{
     right: 30px;
     box-shadow: 0px 0px 10px #0000006a;
     animation: modal 4.5s ease-out forwards;
+}
+
+.error{
+    border-color: red;
+
+    &:focus{
+        border-color: red;
+    }
+}
+
+.msgError{
+    color: red;
+    align-self: flex-start;
+    margin-top: 5px;
 }
 
 @media (width < 950px){

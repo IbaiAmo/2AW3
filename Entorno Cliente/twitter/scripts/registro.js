@@ -60,11 +60,16 @@ nombreRegistro.addEventListener('blur', () =>{
 });
 
 usuarioRegistro.addEventListener('blur', () =>{
-    if (/[@\s]/.test(usuarioRegistro.value) || usuarioRegistro.value.length > 15){
+    if (/[@\s]/.test(usuarioRegistro.value)){
         usuarioRegistro.classList.add('error');
         usuarioBien = false;
         errorUsuario.style.display = "block";
         errorUsuario.textContent = "No puede tener espacios ni @";
+    }else if(usuarioRegistro.value.length > 13){
+        usuarioRegistro.classList.add('error');
+        usuarioBien = false;
+        errorUsuario.style.display = "block";
+        errorUsuario.textContent = "Ese nombre es demasiado largo";
     }else{
         usuarioRegistro.classList.remove('error');
         usuarioBien = true;
@@ -82,7 +87,9 @@ if (nombreBien && usuarioBien){
     let userExists = false;
     for(let i = 0; i < usuarios.length; i++){
         if (usuarioRegistro.value == usuarios[i].usuario){
-            alert ("Ese usuario ya existe");
+            usuarioRegistro.classList.add('error')
+            errorUsuario.style.display = "block";
+            errorUsuario.textContent = "Ese usuario ya existe";
             userExists = true;
             break;
         }

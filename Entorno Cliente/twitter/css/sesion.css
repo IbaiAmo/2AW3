@@ -98,6 +98,7 @@ main{
         transition: ease .3s;
         font-weight: bold;
         margin-top: 40px;
+        margin-bottom: 20px;
 
         &:hover{
             background-color: var(--azulHover);

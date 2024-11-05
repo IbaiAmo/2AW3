@@ -259,8 +259,18 @@ main{
     .tweetData{
         font-size: 17px;
         position: absolute;
-        top: calc(55px/2);
+        top: 10px;
         left: 80px;
+
+        & span{
+            display: none;
+        }
+
+        & #fechaEnvio{
+            position: absolute;
+            top: 23px;
+            left: 0;
+        }
     }
 
     .tweetOptions{

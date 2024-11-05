@@ -27,9 +27,9 @@ $btnTweet.onclick = () =>{
     const clon = $template.content.cloneNode(true);
     const $tweetear = clon.getElementById('tweettear');
     const $closeTweet = clon.getElementById('closeTweet');
-    // const $fotoInput = clon.getElementById('fotoInput');
-    // const $foto = clon.querySelector('.escribir img');
-    // const $borrarFoto = clon.getElementById('borrarFotoBtn');
+    const $fotoInput = clon.getElementById('fotoInput');
+    const $foto = clon.querySelector('.escribir img');
+    const $borrarFoto = clon.getElementById('borrarFotoBtn');
     const $crearTweet = clon.getElementById('crearTweetBtn');
     const textoInput = clon.getElementById('textoInput');
 
@@ -41,14 +41,21 @@ $btnTweet.onclick = () =>{
         $body2.style.overflowY = "auto";
     });
 
-    // $fotoInput.onchange = (e) =>{
-    //     const blob = URL.createObjectURL($fotoInput.files[0]);
-    //     $foto.setAttribute("src", blob);
-    // }
+    $fotoInput.onchange = (e) =>{        
 
-    // $borrarFoto.addEventListener('click', () =>{
-    //     $foto.removeAttribute("src");
-    // });
+        var fileReader = new FileReader();
+
+        fileReader.onload = function(fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result;
+        $foto.setAttribute("src", srcData);
+        }
+        fileReader.readAsDataURL($fotoInput.files[0]);  
+
+    }
+
+    $borrarFoto.addEventListener('click', () =>{
+        $foto.removeAttribute("src");
+    });
 
     $crearTweet.onclick = () =>{
 
@@ -57,13 +64,13 @@ $btnTweet.onclick = () =>{
         const perfilFoto = clon.getElementById('fotoUser');
         const nombre = clon.getElementById('nombre');
         const nombreUsuario = clon.getElementById('nombreUsuario');
-        // const $fotoTweet = clon.getElementById('fotoTweet');
+        const $fotoTweet = clon.getElementById('fotoTweet');
         const $fechaEnvio = clon.getElementById('fechaEnvio');
 
         const fecha = new Date();
         
         
-        if (/*!$foto.hasAttributes() && */textoInput.value.trim() == ""){
+        if (!$foto.hasAttributes() && textoInput.value.trim() == ""){
 
         }else{
             $body2.removeChild(fondo);
@@ -75,7 +82,7 @@ $btnTweet.onclick = () =>{
             nombreUsuario.textContent += getUserUsername();
             $fechaEnvio.textContent = fecha.getDate() + "-" + (fecha.getMonth()+1) + "-" + fecha.getFullYear();
             $mensaje.textContent = textoInput.value;
-            // $fotoTweet.setAttribute("src", $foto.src);
+            $fotoTweet.setAttribute("src", $foto.src);
     
             $panelTweets.insertBefore($tweet, $panelTweets.firstChild);
             
@@ -85,8 +92,8 @@ $btnTweet.onclick = () =>{
                 NOMBRE: getUserName(),
                 NOMBREUSUARIO: getUserUsername(),
                 FECHA: $fechaEnvio.textContent,
-                MENSAJE: $mensaje.textContent//,
-                // IMGSUBIDA: $fotoTweet.attributes[1].value
+                MENSAJE: $mensaje.textContent,
+                IMGSUBIDA: $fotoTweet.attributes[1].value
             }
 
             

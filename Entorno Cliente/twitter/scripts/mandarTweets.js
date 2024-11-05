@@ -19,14 +19,14 @@ if (arrayLocal){
         const foto2 = clone.getElementById('fotoUser');
         const nombre2 = clone.getElementById('nombre');
         const nombreUsuario2 = clone.getElementById('nombreUsuario');
-        // const $fotoTweet2 = clone.getElementById('fotoTweet');
+        const $fotoTweet2 = clone.getElementById('fotoTweet');
         const $fechaEnvio2 = clone.getElementById('fechaEnvio');
     
         foto2.src = fotoPerfilUser(arrayLocal[i].NOMBREUSUARIO);
         nombre2.textContent = nombreUser(arrayLocal[i].NOMBREUSUARIO);
         nombreUsuario2.textContent += usernameUser(arrayLocal[i].NOMBREUSUARIO);        
         $mensaje2.textContent = arrayLocal[i].MENSAJE;
-        // $fotoTweet2.src = arrayLocal[i].IMGSUBIDA;
+        $fotoTweet2.src = arrayLocal[i].IMGSUBIDA;
         $fechaEnvio2.textContent = arrayLocal[i].FECHA;
 
         
