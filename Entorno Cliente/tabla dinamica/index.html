@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/888/888850.png?semt=ais_hybrid">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" integrity="sha512-T7lIYojLrqj7eBrV1NvUSZplDBi8mFyIEGFGdox8Bic92Col3GVrscbJkL37AJoDmF2iAh81fRpO4XZukI6kbA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Tabla dinámica</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body{
+            min-height: 100dvh;
+            width: 100%;
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='120' height='80' patternTransform='scale(5) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,6.7%,17.6%,1)'/><path d='M-50.129 12.685C-33.346 12.358-16.786 4.918 0 5c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='1' stroke='hsla(47,80.9%,61%,1)' fill='none'/><path d='M-50.129 32.685C-33.346 32.358-16.786 24.918 0 25c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='1' stroke='hsla(4.1,89.6%,58.4%,1)' fill='none'/><path d='M-50.129 52.685C-33.346 52.358-16.786 44.918 0 45c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='1' stroke='hsla(186.8,100%,41.6%,1)' fill='none'/><path d='M-50.129 72.685C-33.346 72.358-16.786 64.918 0 65c16.787.082 43.213 10 60 10s43.213-9.918 60-10c16.786-.082 33.346 7.358 50.129 7.685'  stroke-width='1' stroke='hsla(258.5,59.4%,59.4%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+            display: flex;
+            justify-content: center;
+        }
+
+        main{
+            max-width: 900px;
+            width: 90%;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .btns{
+            display: flex;
+            gap: 10px;
+            width: 100;
+            background-color: #ffffff;
+            padding: 15px;
+            justify-content: space-between;
+            align-items: center;
+
+            & div{
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        button{
+            all: unset;
+            width: fit-content;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: ease .2s;
+        }
+
+        #agregar{
+            background-color: #39c439;
+            
+            &:hover{
+                background-color: #2b962b;
+            }
+        }
+
+        #quitar{
+            background-color: #c43939;
+
+            &:hover{
+                background-color: #962b2b;
+            }
+        }
+
+        table{
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+
+            & thead{
+                background-color: #805ad5;
+                color: white;
+            }
+        
+            & td, th{
+                text-align: center;
+                padding: 5px;
+            }
+
+            & td{
+                background-color: white;
+            }
+        }
+
+        .nuevaFila{
+            animation: fila ease-out normal .6s;
+        }
+
+        .modal{
+            background-color: #c43939;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            animation: modal ease normal 4.5s;
+        }
+
+        .borrarse{
+            animation: borrar ease-in normal .8s;
+        }
+
+        @media (width < 600px){
+            .btns{
+                flex-direction: column;
+            }
+        }
+
+        @keyframes modal{
+            0%{
+                transform: translateY(100px);
+            }
+            10%{
+                transform: translateY(0);
+            }
+            90%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(100px);
+            }
+        }
+
+        @keyframes fila{
+            from{
+                scale: .5;
+                opacity: 0%;
+            }
+            to{
+                scale: 1;
+                opacity: 100%;
+            }
+        }
+
+        @keyframes borrar{
+            from{
+                scale: 1;
+                opacity: 100%;
+            }
+            to{
+                scale: .5;
+                opacity: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <div class="btns">
+        <h1>Tabla dinámica</h1>
+        <div>
+            <button id="agregar"><i class="ri-add-line"></i> Agregar Fila</button>
+            <button id="quitar"><i class="ri-subtract-line"></i> Quitar Fila</button>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="id">1</td>
+                <td>Producto 1</td>
+                <td>90€</td>
+            </tr>
+            <tr>
+                <td class="id">2</td>
+                <td>Producto 2</td>
+                <td>34€</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+<script>
+    //Elementos DOM
+    const body = document.querySelector('body');
+    const tbody = document.querySelector('tbody');
+    const agregar = document.getElementById('agregar');
+    const quitar = document.getElementById('quitar');
+    
+
+    agregar.onclick = () =>{
+        const idCeldas = document.querySelectorAll('.id');
+        const fila = document.createElement('tr');
+        fila.classList.add('nuevaFila');
+        const audio = new Audio('agregar.mp3');
+        audio.play();
+        const precio = Math.floor(Math.random() * (99 - 10) + 10);
+
+        if (idCeldas.length != 0){
+            const id = eval(idCeldas[idCeldas.length-1].textContent)+1;
+    
+            fila.innerHTML = `
+            <td class="id">${id}</td>
+            <td>Producto ${id}</td>
+            <td>${precio}€</td>
+            `;
+        }else{
+            fila.innerHTML = `
+            <td class="id">1</td>
+            <td>Producto 1</td>
+            <td>${precio}€</td>
+            `;
+        }
+        
+        tbody.appendChild(fila);
+    }
+
+    quitar.onclick = () =>{
+        const filas = document.querySelectorAll('tbody tr');
+
+        if (filas.length == 0){
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+
+            modal.innerHTML = '<p><i class="ri-error-warning-line"></i> No quedan filas para borrar</p>';
+            body.appendChild(modal);
+            const audio = new Audio('error.mp3');
+            audio.play();
+
+            setTimeout(()=>{
+                body.removeChild(modal);
+            },4500);
+        }else{
+            filas[filas.length-1].classList.add('borrarse');
+            quitar.disabled = true;
+            const audio = new Audio('borrar.mp3');
+            audio.play();
+            setTimeout(()=>{
+                tbody.removeChild(filas[filas.length-1]);
+                quitar.disabled = false;
+            },800);
+        }
+    }
+</script>
+</body>
+</html>
